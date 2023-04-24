@@ -1,180 +1,405 @@
-.navbar a:hover {
-  color: #3340b8;
-  border-bottom: 3px solid #3340b8;;
+/*-------------
+ 	General
+-------------*/
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-.navbar ul {
-  display: flex;
+html{
+	font: normal 16px sans-serif;
+	color: #555;
 }
 
-/* Cambia el color de los links y le agrega padding y margin */
-
-.navbar a {
-  color: white;
-  padding: 9px;
-  margin: 0 10px;
+ul, nav{
+	list-style: none;
 }
 
-.navbar .flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
+a{
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+
+	opacity: 0.9;
 }
 
-/* Con esto le ponemos estilo al h1 solo dentro del navbar */
-.navbar h1 {
-  font-size: 30px;
-  font-weight: 300;
-  margin: 10px 0;
-  line-height: 1.2;
+a:hover{
+	opacity: 1;
 }
 
-/* Estilo del navbar*/
-.navbar {
-  background-color: rgb(6, 6, 73);
-  height: 70px;
-  padding: 0 30px;
+a.btn{
+	color: #fff;
+	border-radius: 4px;
+	text-transform: uppercase;
+	background-color: #2196F3;
+	font-weight: 800;
+	text-align: center;
 }
 
-
-/* Lo centra al contenido*/
-.container {
-  margin: 0 auto;
-  max-width: 1200px;
-  overflow: visible;
+hr{
+	width: 150px;
+	height: 2px;
+	background-color: #2196F3;
+	border: 0;
+	margin-bottom: 80px;
 }
 
-/* Con esto pisamos el estilo por default para sacar el padding y el margin */
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0
+section{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	padding: 125px 100px;
 }
 
-/* Texto blanco en toda la web */
+@media (max-width: 1000px){
 
-body {
-  font-family: "lato", sans-serif;
-  color: white;
+	section{
+		padding: 100px 50px;
+	}
+
 }
 
-/* Con esto hacemos todos los links negros */
-a {
-  color: black;
-  text-decoration: none;
+@media (max-width: 600px){
+
+	section{
+		padding: 80px 30px;
+	}
+
 }
 
-
-h1 {
-  font-size: 30px;
-  font-weight: 600;
-  margin: 10px 0;
-  line-height: 1.2;
+section h3.title{
+	color: #414a4f;
+	text-transform: capitalize; 
+	font: bold 32px 'Open Sans', sans-serif;
+	margin-bottom: 35px;
+	text-align: center;
 }
 
-
-h2 {
-  font-size: 25px;
-  font-weight: 300;
-  margin: 10px 0;
-  line-height: 1.2;
+section p{
+	max-width: 800px;
+	text-align: center;
+	margin-bottom: 35px;
+	padding: 0 20px;
+	line-height: 2;
 }
 
-p {
-  font-size: 30px;
-}
-
-/* Para que las imagenes no sean mas grandes que el container */
-img {
-  width: 100%;
-}
-
-/* Con esto le sacamos el estilo a las listas */
-li {
-  list-style-type: none;
-}
-
-p {
-  font-size: 20px;
-  margin: 10px 0;
+ul.grid{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
 
+/*-------------
+ 	Header
+-------------*/
 
-/* Color y padding del footer */
-footer {
-  background-color: rgb(6, 6, 73);
-  padding: 20px 10px;
-}
-
-/* Todos los links en blanco */
-footer a {
-  color: white;
-  margin: 0 10px;
-}
-footer span {
-  color: white;
-  margin: 0 10px;
-}
-footer a:hover {
-  color: #3340b8;
-  border-bottom: 2px solid #3340b8;
-}
-.grid {
-  overflow: visible;
-  display: grid;
-  grid-template-columns: 60% 40%;
+header{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: #fff;
+	padding: 35px 100px 0;
 }
 
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+header h2{
+	font-family: 'Quicksand', sans-serif;
 }
 
-.grid-item-1,
-.grid-item-2 {
-  position: relative;
-  top: 50px;
+header nav{
+	display: flex;
 }
 
-.lower-container {
-  margin: 120px auto;
-  padding: 0;
-  max-width: 1400px;
+header nav li{
+	margin: 0 15px;
+}
+
+header nav li:first-child{
+	margin-left: 0;	
+}
+
+header nav li:last-child{
+	margin-right: 0;	
 }
 
 
-.titulo {
-  color: black;
-  font-size: 20px;
-  text-align: left;
-  padding-left: 10px;
-  padding-top: 10px;
+
+@media (max-width: 1000px){
+	header{
+		padding: 20px 50px;
+	}
 }
 
-.texto {
-  color: black;
-  font-size: 19px;
-  width: 100%;
-  padding: 10px;
-  margin: 0, 20px;
-  text-align: justify;
+
+@media (max-width: 700px){
+	header{
+		flex-direction: column;		
+	}
+
+	header h2{
+		margin-bottom: 15px;
+	}
 }
 
-.flex {
-  display: flex;
-  justify-content: space-around;
+
+
+/*----------------
+ 	Seccion para el carousel
+----------------*/
+
+.main{
+	position: relative;
+	justify-content: center;
+	min-height: 100vh;
+	color: #fff;
+	text-align: center;
 }
 
-.stats {
-  padding: 45px 50px;
-  text-align: center;
+.main .background-image{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-color: #2196F3;
+	z-index: -1;
 }
 
-.stat {
-  margin: 0 30px;
-  text-align: center;
-  width: 800px;
+.main .background-image:after{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #414a4f;
+	opacity: 0.75;
 }
+
+.main h1{
+	font: bold 60px 'Open Sans', sans-serif;
+	margin-bottom: 15px;
+}
+
+.main h3{
+	font: normal 28px 'Open Sans', sans-serif;
+	margin-bottom: 40px;
+}
+
+.main a.btn{
+	padding: 20px 46px;
+}
+
+@media (max-width: 800px){
+
+	.main{
+		min-height: 600px;
+	}
+
+	.main h1{
+		font-size: 48px;
+	}
+
+	.main h3{
+		font-size: 24px;
+	}
+
+	.main a.btn{
+		padding: 15px 40px;
+	}
+
+}
+
+
+
+/*--------------------
+ 	Nuestros platos
+---------------------*/
+
+.platos{
+	background-color: #fff;
+}
+
+.platos .grid li{
+	padding: 20px;
+	height: 350px;
+	border-radius: 3px;
+
+	background-clip: content-box;
+	background-size: cover;
+	background-position: center;
+	background-color: #333;
+}
+
+.platos .grid li.small{
+	flex-basis: 40%;
+}
+
+.platos .grid li.large{
+	flex-basis: 60%;
+}
+
+
+@media (max-width: 1000px){
+
+	.platos .grid li.small,
+	.platos .grid li.large{
+		flex-basis: 100%;
+	}
+
+}
+
+
+/*--------------------
+ 	Reviews Section
+--------------------*/
+
+.reviews{
+	background-color: #fff;
+}
+
+.reviews .quote{
+	text-align: center;
+	width: 80%;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+.reviews .autor{
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+
+.reviews .autor:last-child{
+    margin-bottom: 0;
+}
+
+@media (max-width: 1000px){
+
+	.reviews .quote{
+		font-size: 20px;
+	}
+
+	.reviews .autor{
+	    font-size: 16px;
+	}
+
+}
+
+
+
+/*---------------------
+ 	Contact Section
+---------------------*/
+
+.contact{
+	background-color: #f7f7f7;
+}
+
+.contact form{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+
+	max-width: 800px;
+	width: 80%;
+}
+
+.contact form input{
+	padding: 15px;
+	flex: 1;
+	margin-right: 30px;
+	font-size: 18px;
+	color: #555;
+}
+
+.contact form .btn{
+	padding: 18px 42px;
+}
+
+
+@media (max-width: 800px){
+
+	.contact form input{
+		flex-basis: 100%;
+		margin: 0 0 20px 0;
+	}
+
+}
+
+
+
+
+/*-------------
+ 	Footer
+-------------*/
+
+footer{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	color: #fff;
+	background-color: #414a4f;
+	padding: 60px 0;
+}
+
+footer ul{
+	display: flex;
+	margin-bottom: 25px;
+	font-size: 32px;
+}
+
+footer ul li{
+	margin: 0 8px;	
+}
+
+footer ul li:first-child{
+	margin-left: 0;	
+}
+
+footer ul li:last-child{
+	margin-right: 0;	
+}
+
+footer p{
+	text-transform: uppercase;
+	font-size: 14px;
+	color: rgba(255,255,255,0.6);
+	margin-bottom: 10px;
+}
+
+footer p a{
+	color: #fff;
+}
+
+@media (max-width: 700px){
+
+	footer{
+		padding: 80px 15px;
+	}
+
+}
+
+
+/* -- Demo ads -- */
+
+@media (max-width: 1200px) {
+	#bsaHolder{ display:none;}
+}
+
+

@@ -1,0 +1,180 @@
+.navbar a:hover {
+    color: #3340b8;
+    border-bottom: 3px solid #3340b8;;
+  }
+  
+  .navbar ul {
+    display: flex;
+  }
+  
+  /* Cambia el color de los links y le agrega padding y margin */
+  
+  .navbar a {
+    color: white;
+    padding: 9px;
+    margin: 0 10px;
+  }
+  
+  .navbar .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+  
+  /* Con esto le ponemos estilo al h1 solo dentro del navbar */
+  .navbar h1 {
+    font-size: 30px;
+    font-weight: 300;
+    margin: 10px 0;
+    line-height: 1.2;
+  }
+  
+  /* Estilo del navbar*/
+  .navbar {
+    background-color: rgb(6, 6, 73);
+    height: 70px;
+    padding: 0 30px;
+  }
+  
+  
+  /* Lo centra al contenido*/
+  .container {
+    margin: 0 auto;
+    max-width: 1200px;
+    overflow: visible;
+  }
+  
+  /* Con esto pisamos el estilo por default para sacar el padding y el margin */
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0
+  }
+  
+  /* Texto blanco en toda la web */
+  
+  body {
+    font-family: "lato", sans-serif;
+    color: white;
+  }
+  
+  /* Con esto hacemos todos los links negros */
+  a {
+    color: black;
+    text-decoration: none;
+  }
+  
+  
+  h1 {
+    font-size: 30px;
+    font-weight: 600;
+    margin: 10px 0;
+    line-height: 1.2;
+  }
+  
+  
+  h2 {
+    font-size: 25px;
+    font-weight: 300;
+    margin: 10px 0;
+    line-height: 1.2;
+  }
+  
+  p {
+    font-size: 30px;
+  }
+  
+  /* Para que las imagenes no sean mas grandes que el container */
+  img {
+    width: 100%;
+  }
+  
+  /* Con esto le sacamos el estilo a las listas */
+  li {
+    list-style-type: none;
+  }
+  
+  p {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+  
+  
+  
+  /* Color y padding del footer */
+  footer {
+    background-color: rgb(6, 6, 73);
+    padding: 20px 10px;
+  }
+  
+  /* Todos los links en blanco */
+  footer a {
+    color: white;
+    margin: 0 10px;
+  }
+  footer span {
+    color: white;
+    margin: 0 10px;
+  }
+  footer a:hover {
+    color: #3340b8;
+    border-bottom: 2px solid #3340b8;
+  }
+  .grid {
+    overflow: visible;
+    display: grid;
+    grid-template-columns: 60% 40%;
+  }
+  
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  
+  .grid-item-1,
+  .grid-item-2 {
+    position: relative;
+    top: 50px;
+  }
+  
+  .lower-container {
+    margin: 120px auto;
+    padding: 0;
+    max-width: 1400px;
+  }
+  
+  
+  .titulo {
+    color: black;
+    font-size: 20px;
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 10px;
+  }
+  
+  .texto {
+    color: black;
+    font-size: 19px;
+    width: 100%;
+    padding: 10px;
+    margin: 0, 20px;
+    text-align: justify;
+  }
+  
+  .flex {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .stats {
+    padding: 45px 50px;
+    text-align: center;
+  }
+  
+  .stat {
+    margin: 0 30px;
+    text-align: center;
+    width: 800px;
+  }
