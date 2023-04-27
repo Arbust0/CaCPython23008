@@ -30,23 +30,68 @@
 	 	
 	
 <div>
-	<h1>Formulario de contacto</h1> </div>
-	  <br> <br>
-	 <form action="">
-    <label for="">Nombre:</label>
-    <input type="text" placeholder="Apellido, Nombre" name="nombre" id="id1">
-    <br><br>
-    <label for="">Mail:</label>
-    <input type="email" placeholder="xxxxx@yyyy.com" name="mail" id="id2">
-    <br> <br>
-    <label for="">Número de Personas</label>
-    <input type="number" value="" name="reserva" id="id3">
-    <br><br>
-    <label for="">Fecha de nacimiento</label>
-    <input type="date" placeholder="XX/YY/ZZZZ" hidden name="cumple" id="id4">
-    <br><br>
-    <input type="submit" value="Enviar datos">
-    <input type="reset" value="Reiniciar form">
+	 <h2>Formulario</h2>
+
+    <form action="mostrar_datos.html" target="_blank">
+     
+        <fieldset>
+            
+            <label for="nombre">Nombre: </label>
+            <input size="30" type="text" name="nombre" placeholder="Ingrese su nombre aqui..." >
+            <br><br>
+
+            <!-- Ingreso del apellido -->
+            <label for="apellido">Apellido: </label>
+            <input size="30" type="text" name="apellido" placeholder="Ingrese su apellido aqui..." >
+            <br><br>
+
+            <!-- Ingreso del DNI -->
+            <label for="dni">Nro DNI: </label>
+            <input type="number" name="dni">
+
+            <!-- Ingreso Fecha de nacimiento -->
+            <label for="fecha">Fecha de nacimiento: </label>
+            <input type="date" name="fecha">
+            <br><br>
+
+     
+            <label for="email">email: </label>
+            <input type="email" name="email">
+            <br><br>
+
+     
+
+                  </fieldset>
+
+        <fieldset>
+            <legend>Intereses personales:</legend>
+            <input type="checkbox"  name="intereses" value="Software" id="01">
+            <label for="01">Celíaco</label>
+
+            <input type="checkbox"  name="intereses" value="Hardware"id="02">
+            <label for="02">Diabético</label>
+
+            <input type="checkbox"  name="intereses" value="D. Grafico"id="03">
+            <label for="03">Vegetariano</label>
+
+            <input type="checkbox" name="intereses" value="Otros" id="04">
+            <label for="04">Vegano</label>
+        </fieldset>
+
+        <br>
+
+        <label for="comentario">Comentarios:</label><br>
+        <textarea name="comentario" id="comentario" cols="40" rows="3"></textarea>
+
+       
+        <br><br>
+        <input type="reset" value="Borrar formulario">
+        <input type="submit" value="Enviar datos">
+    </form>
+
+
+</body>
+</html>
 
 
   </form>
