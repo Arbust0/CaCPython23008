@@ -349,14 +349,14 @@ header nav li:last-child{
     font-weight: bold;
     padding: 15px;
     margin: 0 auto;
-    width: 300px;
+    width: 250px;
 }
 
 .contactoinput, textarea{
     border: 10;
     outline: none;
 
-    width: 280px;
+    width: 150px;
 }
 
 .contactofield{
