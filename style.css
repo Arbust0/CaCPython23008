@@ -369,6 +369,17 @@ header nav li:last-child{
 .contactofield:focus{
     border-color: #e3eaee;
 }
+.contactofield2{
+    border: outset 2px #bebdc0;
+    padding: 5px;
+    width: 30%;
+    text-align: left;
+    
+}
+
+.contactofield:focus{
+    border-color: #e3eaee;
+}
 
 .contactocenter-content{
     text-align: center;
