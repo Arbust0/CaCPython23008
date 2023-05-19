@@ -366,15 +366,15 @@ header nav li:last-child{
     
 }
 
-.contact .field:focus{
+.contact form .field:focus{
     border-color: #e3eaee;
 }
 
-.contact .center-content{
+.contact form .center-content{
     text-align: center;
 }
 
-.contact .button {
+.contact form .button {
     background-color: #3a056b; /* Green */
     border: 2px inset #efd7f5;
     color: white;
@@ -388,7 +388,7 @@ header nav li:last-child{
 
   
 
-.contact .button:hover {
+.contact form .button:hover {
   background-color: #c0aad4; 
   color: white;
 }
