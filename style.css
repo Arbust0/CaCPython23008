@@ -347,7 +347,7 @@ header nav li:last-child{
     font-size: 2em;
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
-    padding: 15px;
+    padding: 10px;
     margin: 0 auto;
     width: 250px;
 }
@@ -362,7 +362,7 @@ header nav li:last-child{
 .contactofield{
     border: outset 2px #bebdc0;
     padding: 10px;
-    width: 30%;
+    width: 40%;
     
 }
 
