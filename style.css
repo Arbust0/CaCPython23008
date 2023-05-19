@@ -340,7 +340,7 @@ header nav li:last-child{
 	}
 */
 
-.contacto form{
+.contactoform{
     background-color: rgb(48, 4, 99);
     border-radius: 3px;
     color: #e0d1ee;
@@ -352,25 +352,25 @@ header nav li:last-child{
     width: 350px;
 }
 
-.contacto input, textarea{
+.contactoinput, textarea{
     border: 10;
     outline: none;
 
     width: 280px;
 }
 
-.contacto .field{
+.contactofield{
     border: outset 2px #bebdc0;
     padding: 12px;
 
     
 }
 
-.contacto .field:focus{
+.contactofield:focus{
     border-color: #e3eaee;
 }
 
-.contacto .center-content{
+.contactocenter-content{
     text-align: center;
 }
 
