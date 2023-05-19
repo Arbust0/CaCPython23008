@@ -341,7 +341,7 @@ header nav li:last-child{
 */
 
 .contactoform{
-    background-color: rgb(48, 4, 99);
+    background-color: none;
     border-radius: 3px;
     color: #e0d1ee;
     font-size: 1em;
@@ -349,7 +349,7 @@ header nav li:last-child{
     font-weight: bold;
     padding: 50px;
     margin: 0 auto;
-    width: 350px;
+    width: 50%;
 }
 
 .contactoinput, textarea{
