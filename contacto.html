@@ -9,7 +9,8 @@
 	
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-  <link type="text/css" rel="stylesheet" href="style.css">
+  <link type="text/css" rel="stylesheet" href="boton.css">
+	
   <script src="https://kit.fontawesome.com/79d424b66a.js" crossorigin="anonymous"></script>
 </head>
 
@@ -31,31 +32,32 @@
 	
 <div>
 	 <h1>Formulario de contacto</h1>
-<form action="">
-   <fieldset>
+    <form action="">
+     
+        <fieldset>
 		 <legend>Datos personales:</legend>
             <br>
-	   <p>Nombre:</p>
+            <label for="nombre">Nombre: </label>
             <input size="20" type="text" name="nombre" class=field placeholder="Ingrese su nombre aqui..." >
-            <br>
+            <br><br>
 
      
-            <p>Apellido: </p>
+            <label for="apellido">Apellido: </label>
             <input size="20" type="text" name="apellido" class=field placeholder="Ingrese su apellido aqui..." >
-            <br>
+            <br><br>
 
           
-            <p>DNI: </p>
+            <label for="dni">DNI: </label>
             <input type="number" class=field name="dni">
-		<br>
+		<br><br>
 
-            <p>Fecha de nacimiento: </p>
+            <label for="fecha">Fecha de nacimiento: </label>
             <input type="date" class=field name="fecha">
-            <br>
+            <br><br>
      
-            <p>Mail: </p>
+            <label for="email">Mail: </label>
             <input type="email" class=field name="email">
-            <br>
+            <br><br>
 
      
 
@@ -63,30 +65,30 @@
 <br><br>
         <fieldset>
             <legend>Preferencia en comidas:   </legend>
-            <input type= "checkbox"  name="intereses" class="field" value="Celíaco" id="01">
+            <input type= "checkbox"  name="intereses" class=field value="Celíaco" id="01">
             <label for="01">Celíaco</label>
 
-            <input type="checkbox"  name="intereses" class= "field" value="Diabético" id="02">
+            <input type="checkbox"  name="intereses" class= field value="Diabético" id="02">
             <label for="02">Diabético</label>
 
-            <input type="checkbox"  name="intereses" class= "field" value="Vegetariano" id="03">
+            <input type="checkbox"  name="intereses" class= field value="Vegetariano" id="03">
             <label for="03">Vegetariano</label>
 
-            <input type="checkbox" name="intereses" class= "field" value="Vegano" id="04">
+            <input type="checkbox" name="intereses" class= field value="Vegano" id="04">
             <label for="04"><b>Vegano</b></label>
         </fieldset>
 
         <br>
 
-        <p> Comentarios: </p><br>
-        <textarea name="comentario" id="comentario" class= "field" cols= "20" rows="4"></textarea>
+        <label for="comentario">Comentarios:</label><br>
+        <textarea name="comentario" id="comentario" class="field" cols= "20" rows="3"></textarea>
 
        
-        <br>
+        <br><br>
 	
-	      <p class="center-content"><input type="button" class=".contacto form .button" value="Enviar Datos">
+	      <p class="center-content"><input type="button" class="button" value="Enviar Datos">
         </p>
-         <p class="center-content"><input type="button" class=".contacto form .button" value="Borrar">
+         <p class="center-content"><input type="button" class="button" value="Borrar">
         </p>
 	   
    
