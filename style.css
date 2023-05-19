@@ -340,7 +340,7 @@ header nav li:last-child{
 	}
 */
 
-.contact form{
+.contacto form{
     background-color: rgb(48, 4, 99);
     border-radius: 3px;
     color: #e0d1ee;
@@ -352,29 +352,29 @@ header nav li:last-child{
     width: 350px;
 }
 
-.contact input, textarea{
+.contacto input, textarea{
     border: 10;
     outline: none;
 
     width: 280px;
 }
 
-.contact .field{
+.contacto .field{
     border: outset 2px #bebdc0;
     padding: 12px;
 
     
 }
 
-.contact form .field:focus{
+.contacto form .field:focus{
     border-color: #e3eaee;
 }
 
-.contact form .center-content{
+.contacto form .center-content{
     text-align: center;
 }
 
-.contact form .button {
+.contacto form .button {
     background-color: #3a056b; /* Green */
     border: 2px inset #efd7f5;
     color: white;
@@ -388,7 +388,7 @@ header nav li:last-child{
 
   
 
-.contact form .button:hover {
+.contacto form .button:hover {
   background-color: #c0aad4; 
   color: white;
 }
