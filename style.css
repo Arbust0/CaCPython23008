@@ -374,7 +374,7 @@ header nav li:last-child{
     text-align: center;
 }
 
-.contacto .button {
+.contactobutton {
     background-color: #3a056b; /* Green */
     border: 2px inset #efd7f5;
     color: white;
@@ -388,7 +388,7 @@ header nav li:last-child{
 
   
 
-.contacto .button:hover {
+.contactobutton:hover {
   background-color: #c0aad4; 
   color: white;
 }
