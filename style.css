@@ -340,7 +340,7 @@ header nav li:last-child{
 	}
 */
 
-form{
+.contact form{
     background-color: rgb(48, 4, 99);
     border-radius: 3px;
     color: #e0d1ee;
@@ -352,29 +352,29 @@ form{
     width: 350px;
 }
 
-input, textarea{
+.contact input, textarea{
     border: 10;
     outline: none;
 
     width: 280px;
 }
 
-.field{
+.contact .field{
     border: outset 2px #bebdc0;
     padding: 12px;
 
     
 }
 
-.field:focus{
+.contact .field:focus{
     border-color: #e3eaee;
 }
 
-.center-content{
+.contact .center-content{
     text-align: center;
 }
 
-.button {
+.contact .button {
     background-color: #3a056b; /* Green */
     border: 2px inset #efd7f5;
     color: white;
@@ -388,7 +388,7 @@ input, textarea{
 
   
 
-.button:hover {
+.contact .button:hover {
   background-color: #c0aad4; 
   color: white;
 }
