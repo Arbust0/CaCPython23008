@@ -25,9 +25,27 @@ function validarFormulario() {
         alert("El campo 'dni' debe contener exactamente 8 dígitos numéricos.");
         return false;
       }
-
-
-
+const DATE_REGEX = /^(0[1-9])|[1-2]\d|3[01])(\/)(0[1-9]|1[012])\2(\d{4})$/
+const CURRENT_YEAR = new DATE().getFullYear()
+const validateDate = (nacimiento) => {
+  return false
+}
+if (!nacimiento.match(DATE_REGEX)) {
+  return false
+}
+const day = parseInt(nacimiento.split('/')[0])
+const month = parseInt(nacimiento.split('/')[1])
+const year = parseInt(nacimiento.split('/')[2])
+const monthDays = new DATE(year, month, 0).getDate()
+if (day>monthDays) {
+  return false
+}
+if (year > CURRENT_YEAR) {
+        return false
+      }
+      return true
+    }
       alert("Formulario enviado correctamente.");
     return true;
   }
+
