@@ -299,7 +299,16 @@ header nav li:last-child{
 
 }
 
-
+.experiencias.img{
+	widht:100%
+	height: 100%
+	transition: 0.5s
+	object-fit: cover;
+	}
+	
+	.experiencias.img:hover{
+	transform: sacale (1.2)
+	}
 
 /*---------------------
  	Contact Section
