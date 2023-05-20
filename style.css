@@ -259,6 +259,19 @@ header nav li:last-child{
 
 }
 
+/*--------------------
+Eventos Section
+---------------------*/
+.eventos .img{
+	width:100%;
+	height: 100%;
+	transition: 0.5s;
+	object-fit: cover;
+	}
+	
+	.eventos .img:hover{
+	transform: sacale (1.2)
+	}
 
 /*--------------------
  	Reviews Section
@@ -299,16 +312,6 @@ header nav li:last-child{
 
 }
 
-.experiencias.img{
-	width:100%;
-	height: 100%;
-	transition: 0.5s;
-	object-fit: cover;
-	}
-	
-	.experiencias.img:hover{
-	transform: sacale (1.2)
-	}
 
 /*---------------------
  	Contact Section
