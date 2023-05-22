@@ -5,5 +5,4 @@ Repo para el tp grupal de Python
 Integrantes:
 -Magali Leal
 -Cecilia Marquez
--Julian Garay
 -Augusto Luna
