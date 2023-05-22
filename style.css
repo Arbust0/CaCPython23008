@@ -259,7 +259,49 @@ header nav li:last-child{
 
 }
 
+/*--------------------
+Eventos Section
+---------------------*/
 
+.slider-frame {
+	max-width: 500px;
+    max-height: 500px;
+	margin:50px auto 0;
+	object-fit: cover;
+	overflow: hidden;
+}
+
+.slider-frame ul {
+	display: flex;
+	padding: 0;
+	width: 400%;
+	object-fit: cover;
+	
+	animation: slide 20s infinite alternate ease-in-out;
+}
+
+.slider-frame li {
+	width: 100%;
+	list-style: none;
+}
+
+.slider-frame img {
+	width: 100%;
+}
+
+@keyframes slide {
+	0% {margin-left: 0;}
+	20% {margin-left: 0;}
+	
+	25% {margin-left: -100%;}
+	45% {margin-left: -100%;}
+	
+	50% {margin-left: -200%;}
+	70% {margin-left: -200%;}
+	
+	75% {margin-left: -300%;}
+	100% {margin-left: -300%;}
+}
 /*--------------------
  	Reviews Section
 --------------------*/
@@ -298,7 +340,6 @@ header nav li:last-child{
 	}
 
 }
-
 
 
 /*---------------------
@@ -370,8 +411,7 @@ header nav li:last-child{
     border-color: #e3eaee;
 }
 
-   
-}
+
 
 .contactocenter-content{
     text-align: center;
@@ -399,7 +439,13 @@ header nav li:last-child{
   color: white;
 }
 
+/*--------------
+Ubicacion
+--------------*/
 
+.ubicacionleft-content{
+	text-align:left;
+}
 
 /*-------------
  	Footer
@@ -453,10 +499,46 @@ footer p a{
 }
 
 
-/* -- Demo ads -- */
+
 
 @media (max-width: 1200px) {
 	#bsaHolder{ display:none;}
 }
+
+.tablaC {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.tablaC thead tr {
+    background-color: #1377c9;
+    color: #ffffff;
+    text-align: left;
+}
+
+.tablaC th,
+.tablaC td {
+    padding: 12px 15px;
+}
+
+.tablaC tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.tablaC tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.tablaC tbody tr:last-of-type {
+    border-bottom: 2px solid #1377c9;
+}
+
+
+
+
 
 
