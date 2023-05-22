@@ -493,10 +493,46 @@ footer p a{
 }
 
 
-/* -- Demo ads -- */
+
 
 @media (max-width: 1200px) {
 	#bsaHolder{ display:none;}
 }
+
+.tablaC {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.tablaC thead tr {
+    background-color: #1377c9;
+    color: #ffffff;
+    text-align: left;
+}
+
+.tablaC th,
+.tablaC td {
+    padding: 12px 15px;
+}
+
+.tablaC tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.tablaC tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.tablaC tbody tr:last-of-type {
+    border-bottom: 2px solid #1377c9;
+}
+
+
+
+
 
 
