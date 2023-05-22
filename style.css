@@ -275,6 +275,7 @@ Eventos Section
 	display: flex;
 	padding: 0;
 	width: 400%;
+	object-fit: cover;
 	
 	animation: slide 20s infinite alternate ease-in-out;
 }
