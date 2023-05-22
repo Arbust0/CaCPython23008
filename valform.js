@@ -26,6 +26,25 @@ function validarFormulario() {
         return false;
       
       }
+
+
+const CURRENT_YEAR = new DATE().getFullYear()
+const validateDate = (nacimiento) => {
+  return false
+}
+
+const day = parseInt(nacimiento.split('/')[0])
+const month = parseInt(nacimiento.split('/')[1])
+const year = parseInt(nacimiento.split('/')[2])
+const monthDays = new DATE(year, month, 0).getDate()
+if (day>monthDays) {
+  return false
+}
+if (year > CURRENT_YEAR) {
+        return false
+      }
+      return true
+    }
       alert("Formulario enviado correctamente.");
     return true;
   }
