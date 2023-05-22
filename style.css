@@ -264,10 +264,10 @@ Eventos Section
 ---------------------*/
 
 .slider-frame {
-	max-width: 400px;
-    max-height: 400px;
+	max-width: 500px;
+    max-height: 500px;
 	margin:50px auto 0;
-	padding: 10px;
+	padding: 0px;
 	overflow: hidden;
 }
 
