@@ -439,7 +439,13 @@ Eventos Section
   color: white;
 }
 
+/*--------------
+Ubicacion
+--------------*/
 
+.ubicacionleft-content{
+	text-align: left;
+}
 
 /*-------------
  	Footer
