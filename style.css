@@ -147,7 +147,14 @@ header nav li:last-child{
 
 	header h2{
 		margin-bottom: 15px;
+		font-size: 16px;
 	}
+
+	header nav{
+		font-size: 8px;
+
+	}
+
 }
 
 
@@ -227,6 +234,18 @@ header nav li:last-child{
 		padding: 15px 40px;
 	}
 
+	.slide{
+		bottom: auto;
+		max-width: 360px;
+		max-height: 600px;
+		position: center;
+
+	}
+
+	.slide-item{
+		position: relative;
+	}
+
 }
 
 .slide {
@@ -255,6 +274,7 @@ header nav li:last-child{
     height: auto;
     max-width: 100%;
 }
+
 .slide-control {
     background: rgba(0, 0, 0, 0.28);
     border-radius: 50%;
@@ -310,6 +330,7 @@ header nav li:last-child{
     cursor: pointer;
     display: block;
     font-size: 35px;
+	position: relative;
 }
 .slide-circulo:hover {
     color: #aaaaaa;
@@ -324,21 +345,6 @@ header nav li:last-child{
       li:nth-child(4) .slide-circulo {
     color: #428bca;
 }
-#titulo {
-    width: 100%;
-    position: absolute;
-    padding: 0px;
-    margin: 0px auto;
-    text-align: center;
-    font-size: 27px;
-    color: rgba(255, 255, 255, 1);
-    font-family: 'Open Sans', sans-serif;
-    z-index: 9999;
-    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33), 
-         -1px 0px 2px rgba(255, 255, 255, 0);
-}
-
-
 
 /*--------------------
  	Nuestros platos
