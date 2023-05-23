@@ -216,7 +216,7 @@ header nav li:last-child{
 
 	.slide{
 		bottom: auto;
-		max-width: 360px;
+		max-width: 400px;
 		max-height: 800px;
 		position: center;
 
@@ -226,6 +226,13 @@ header nav li:last-child{
 		position: relative;
 	}
 
+	.main h1{
+		font-size: 25px;
+	}
+
+	.main h3{
+		font-size: 15px;
+	}
 }
 
 .slide {
