@@ -215,11 +215,8 @@ header nav li:last-child{
 @media (max-width: 800px){
 
 	.slide{
-		bottom: auto;
-		max-width: 400px;
-		max-height: 800px;
-		position: center;
-
+		max-width: 500px;
+		max-height: 820px;
 	}
 
 	.slide-item{
