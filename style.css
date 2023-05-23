@@ -526,6 +526,7 @@ Eventos Section
 }
 .contactoleft-content{
 	text-align: justify;
+
 }
 
 .contactobutton {
@@ -553,6 +554,7 @@ Ubicacion
 
 .ubicacionleft-content{
 	text-align:left;
+	width: fit-content
 }
 
 /*-------------
