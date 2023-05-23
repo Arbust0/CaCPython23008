@@ -214,30 +214,10 @@ header nav li:last-child{
 
 @media (max-width: 800px){
 
-	.main{
-		min-height: 600px;
-	}
-
-	.main h1{
-		font-size: 48px;
-	}
-
-	.main h2{
-		font-size: 14px;
-	}
-
-	.main h3{
-		font-size: 24px;
-	}
-
-	.main a.btn{
-		padding: 15px 40px;
-	}
-
 	.slide{
 		bottom: auto;
 		max-width: 360px;
-		max-height: 600px;
+		max-height: 800px;
 		position: center;
 
 	}
