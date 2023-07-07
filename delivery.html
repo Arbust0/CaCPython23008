@@ -40,12 +40,16 @@
                     <div class="col-3">
                         <div class="card">
                         <img 
+                         
                         tittle="Título producto"
                         alt="Título"
                         class="card-img-top"
-                        src="#"> <!--  en "Título producto" y en "Título", poner el nombre que figure en la bd
+                        src="#"
+                        data-toggle="popover"
+                        data-trigger="hover"
+                        data-content="Descripción"> <!--  en "Título producto" y en "Título", poner el nombre que figure en la bd
                             en # de src hay que poner el nombre de imagen que figure en la BD 
-                            \--> 
+                            en descripción, hay que poner el nombre de la col descripción\--> 
                         <div class="card-body">
                         <span>Nombre</span>  
                         <!--  en Nombre hay que poner el nombre que figure en la BD 
@@ -75,7 +79,15 @@
 
                     
                  </div>	
-    
+     <!--  pop over
+        <script>
+            $(function (){
+                $('.example-popover').popover({
+                    container: 'body'
+                
+                })
+            });
+        </script> \-->
     </section>
 
 <section class="Redes">
