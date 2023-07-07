@@ -27,9 +27,46 @@
 	</header>
 
     <section class="main"> <div class="background-image" style="background-image: url(Imagenes/restom1.png);"> </div>
-	 	
+        <div class="container">
+            <br>
+                <div class="alert alert-success">
+                 Si desea ver el carrito de compras, haga clic aquí
+                 <a href="#" class="badge badge-success">Ver carrito </a>
+                </div>
+                
+                <div class="row">
+                <?php
+                    $sentencia=$pdo->prepare("SELECT*FROM 'tblproductos'");
+                    $sentencia->execyte();
+                    $listaProductos=$sentencia->fetchAll(PDO::FETCH_ASSOC);
+                    print_r($listaProductos);
+                    ?>
+        
+        
+        
+                    <div class="col-3">
+                        <div class="card">
+                        <img 
+                        tittle="Título producto"
+                        alt="Título"
+                        class="card-img-top" src="https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/lrg/9781/4842/9781484217290.jpg">
+                        <div class="card-body">
+                        <span>Título del producto </span>
+                            <h5 class="card-tittle">$300,00</h5>
+                            <p class="card-text"> Descripción</p>
+        
+                            <button class="btn btn-primary"
+                            name="btnAccion"
+                            value="Agregar"
+                            type="submit">
+                            Agregar al carrito
+                        </button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>	
     
-</section>
+    </section>
 
 <section class="Redes">
 <div> <h2>¿Cómo contactarnos?</h2> </div>
