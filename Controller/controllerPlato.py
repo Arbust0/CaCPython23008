@@ -1,11 +1,11 @@
 from random import sample
-from conexionBD import *  #Importando conexion BD
+from conexionBD import *  #Importando conexion BD 
 
 
 
 #Creando una funcion para obtener la lista de carros.
 def listaPlatos():
-    conexion_MySQLdb = connectionBD() #creando mi instancia a la conexion de BD
+    conexion_MySQLdb = connectionBD() #creando mi instancia a la conexion de BD  // modificar según el nombre de la BD
     cur      = conexion_MySQLdb.cursor(dictionary=True)
 
     querySQL = "SELECT * FROM platos ORDER BY id DESC" #ponerle el nombre que figure en la BD
