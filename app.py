@@ -2,32 +2,71 @@ import sqlite3
 from flask import Flask,  jsonify, request
 from flask_cors import CORS
 
+app = Flask(__name__)
+CORS(app)
 # Configurar la conexión a la base de datos SQLite
-DATABASE = 'productos.db'
+DATABASE = 'inventario.db'
 
-def conectar():
+def get_db_connection():
     conn = sqlite3.connect(DATABASE)
     conn.row_factory = sqlite3.Row
     return conn
 
-x = Inventario()
+# Crear la tabla 'productos' si no existe
+def create_table():
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    
+    cursor.execute("""CREATE TABLE IF NOT EXISTS productos
+                (codigo INT PRIMARY KEY,
+                descripcion VARCHAR(100),
+                cantidad NVARCHAR(50),
+                precio NVARCHAR(50))""")
+    conn.commit()
+    conn.close()
 
-# Crear una instancia de la clase Carrito
-mi_carrito = Carrito()
+# Verificar si la base de datos existe, si no, crearla y crear la tabla
+def create_database():
+    conn = sqlite3.connect(DATABASE)
+    cursor = conn.cursor()
 
-# Agregar productos al inventario
-x.agregar_producto(1, "Producto 1", 10, 19.99)
-x.agregar_producto(2, "Producto 2", 5, 9.99)
-x.agregar_producto(3, "Producto 3", 15, 29.99)
+    cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='productos'")
+    table_exists = cursor.fetchone()
 
-# Agregar productos al carrito
-mi_carrito.agregar(1, 2, x)  # Agregar 2 unidades del producto con código 1 al carrito
-mi_carrito.agregar(3, 1, x)  # Agregar 1 unidad del producto con código 3 al carrito
-mi_carrito.quitar(1, 1, x)   # Quitar 1 unidad del producto con código 1 al carrito
-mi_carrito.agregar(2, 1, x)  # Agregar 1 unidad del producto con código 2 al carrito
+    if not table_exists:
+        create_table()
+        datos = [
+        ("11", "EMPANADA DE SALMÓN", "30","500"),
+        ("12", "EMPANADA DE VERDURA", "20","500",),
+        ("13", "BURRATA DE CAMPO", "10","1000", ),
+        ("21", "POLLO A LA CREMA", "15", "2000"),
+        ("22","BONDIOLA CON PURÉ", "15", "2500",),
+        ("23", "TALLARINES CON FILETTO", "20", "1800"),
+        ("24", "RAVIOLONES DE VERDURA CON SALSA 4 QUESOS","20","2000", ),
+        ("25", "BIFE DE CHORIZO", "30","2500"),
+        ("26", "BIFE DE LOMO","30","2800"),
+        ("27", "MATAMBRITO DE CERDO","30","2600"),
+        ("31", "PAPAS BASTÓN", "40", "800"),
+        ("32", "BATATAS FRITAS","40", "700"),
+        ("33", "PURÉ DE PAPA","50", "700"),
+        ("41", "ENSALADA CAESAR","30", "2000"),
+        ("51", "TIRAMISU", "30", "1000"),
+        ("52", "FLAN CASERO", "45", "900"),
+        ("53", "MOUSSE DE CHOCOLATE", "50", "900"),
+        ("61", "COCA COLA", "100", "600"),
+        ("62", "FANTA","100", "600"),
+        ("63", "SEVEN UP", "150", "600"),
+        ("64", "AGUA MINERAL", "160", "400"),
+        ("65", "SABORIZADA MANZANA", "80", "500"),
+        ("66", "SABORIZADA NARANJA", "80", "500")
+        ]
+    
+    cursor.executemany("""INSERT INTO productos (codigo, descripcion, cantidad, precio) VALUES (?, ?, ?, ?)""", datos)
+    conn.commit()
+    conn.close()
 
-mi_carrito.mostrar()
-#----------------------------------------------------------------------
+# Crear la base de datos y la tabla si no existen
+create_database()
 
 # -------------------------------------------------------------------
 # Definimos la clase "Producto"
