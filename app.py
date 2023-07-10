@@ -7,7 +7,7 @@ CORS(app)
 # Configurar la conexión a la base de datos SQLite
 DATABASE = 'inventario.db'
 
-#http://127.0.0.1:5000#
+#http://127.0.0.1:5000 #
 
 def get_db_connection():
     conn = sqlite3.connect(DATABASE)
