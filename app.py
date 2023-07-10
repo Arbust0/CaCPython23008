@@ -7,7 +7,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database/inventario.db'
 db = SQLAlchemy(app)
 
 class Producto(db.Model):
-    codigo = db.Column(db.Integer, primary_key=True)
+    codigo = db.Column(db.Integer, primary_key=True, autoincrement=True)
     descripcion = db.Column(db.String(100))
     cantidad = db.Column(db.String(50))
     precio = db.Column(db.String(50))
@@ -69,19 +69,22 @@ def mostrar_productos():
 
 @app.route('/agregar', methods=['GET', 'POST'])
 def agregar_producto():
+
+    if request.method == 'GET':
+        return render_template('agregar_producto.html')
+ 
     if request.method == 'POST':
-        codigo = request.form['codigo']
+        # codigo = request.form['codigo']
         descripcion = request.form['descripcion']
         stock = request.form['stock']
         precio = request.form['precio']
-
-        producto = Producto(codigo=codigo, descripcion=descripcion, cantidad=stock, precio=precio)
-        db.session.add(producto)
-        db.session.commit()
-
+        conn = sqlite3.connect('database/inventario.db')
+        cursor = conn.cursor()
+        cursor.execute("INSERT INTO productos (descripcion, stock, precio) VALUES (?, ?, ?)", (descripcion, stock, precio))
+        conn.commit()
+        conn.close()
         return redirect('/')
-    
-    return render_template('agregar_producto.html')
+
 
 @app.route('/editar/<int:codigo>', methods=['GET', 'POST'])
 def editar_producto(codigo):
