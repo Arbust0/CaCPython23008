@@ -19,17 +19,9 @@
 	</header>
  <section class="main"> <div class="background-image" style="background-image: url('/static/Imagenes/tabla%20de%20comida.jpg');"></div>
     <div class="container">
-        <h1>Editar Productos</h1>       
-        <div id="app">
-            <form class="carritoform" @submit.prevent="obtenerProducto">
-                <label for="codigo">Código:</label>
-                <input class="carritoinput" type="text" v-model="codigo" required><br>
-                <button class="carritobutton" type="submit">Modificar Producto</button> 
-            </form>
-
-            <div v-if="mostrarDatosProducto">
-                <br><br>
-                <h1> <u>Datos del Producto</u></h1>
+        <div v-if="mostrarDatosProducto">
+            <br><br>
+            <h1> <u>Datos del Producto</u></h1>
                 <form class="carritoform" @submit.prevent="guardarCambios">
                     <label for="descripcionModificar">Descripción:</label>
                     <input class="carritoinput" type="text" id="descripcionModificar" v-model="descripcion" required><br>
@@ -43,7 +35,6 @@
                     <button class="contactobutton" type="submit">Guardar Cambios</button>
                     <a class="carritobutton" href="modificaciones.html">Cancelar</a>
                 </form>
-            </div>
         </div>
     </div>
  </section>
