@@ -122,5 +122,40 @@ def eliminar_producto(codigo):
 def productos():
     return mostrar_productos()
 
+@app.route('/index.html')
+def index():
+    return render_template('index.html')
+
+@app.route('/carta.html')
+def carta():
+    return render_template('carta.html')
+
+@app.route('/reservas.html')
+def reservas():
+    return render_template('reservas.html')
+
+@app.route('/experiencias.html')
+def experiencicas():
+    return render_template('experiencias.html')
+
+@app.route('/delivery.html')
+def delivery():
+    return render_template('delivery.html')
+
+@app.route('/contacto.html')
+def contacto():
+    return render_template('contacto.html')
+
+@app.route('/ubicacion.html')
+def ubicacion():
+    return render_template('ubicacion.html')
+
+#@app.route('/name.html')
+#def name():
+#    return render_template('name.html')
+
+#y en el html <h2><a href="/index.html">
+#el style <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
 if __name__ == '__main__':
     app.run(debug=True)
