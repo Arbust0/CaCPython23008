@@ -157,5 +157,8 @@ def ubicacion():
 #y en el html <h2><a href="/index.html">
 #el style <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 
+#como enganchar imagenes de static
+#style="background-image: url('/static/Imagenes/tabla%20de%20comida.jpg');"
+
 if __name__ == '__main__':
     app.run(debug=True)
