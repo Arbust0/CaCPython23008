@@ -583,6 +583,31 @@ Ubicacion
 
 }
 
+
+/*---------Carrito
+------------------*/
+
+
+.carritobutton {
+    background-color: #2196F3;
+    border: 2px inset #efd7f5;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    transition-duration: 0.4s;
+  }
+
+  
+
+.carritobutton:hover {
+  background-color: #144f80; 
+  color: white;
+}
+
+
 /*-------------
  	Footer
 -------------*/

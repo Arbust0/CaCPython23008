@@ -677,6 +677,75 @@ footer p a{
 
 
 
+/*---------Carrito
+------------------*/
+
+
+.carritobutton {
+    background-color: #2196F3;
+    border: 2px inset #efd7f5;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+  }
+
+  
+
+.carritobutton:hover {
+  background-color: #144f80; 
+  color: white;
+}
+
+
+
+
+.carritoform{
+    background-color: none;
+    border-radius: 3px;
+    color: #eee5f7;
+	text-align: center;
+    font-size: 2em;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    padding: 10px;
+    margin: 0 auto;
+    width: 250px;
+}
+
+.carritoinput, textarea{
+    border: 10;
+    outline: none;
+    width: 150px;
+	background-color:rgb(247, 247, 247);
+    border-radius: 3px;
+    color:#333;
+	text-align: center;
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight:normal;
+    padding: 10px;
+    margin: 0 auto;
+    width: 250px;
+}
+
+.carritofield{
+    border: outset 4px #550ee2;
+    padding: 3pc;
+    width: 4pc;
+	text-align: center;
+    
+}
+
+.carritofield:focus{
+    border-color: #e3eaee;
+}
+
+
+
 
 
 
