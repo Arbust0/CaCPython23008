@@ -138,10 +138,6 @@ def reservas():
 def experiencicas():
     return render_template('experiencias.html')
 
-@app.route('/delivery.html')
-def delivery():
-    return render_template('delivery.html')
-
 @app.route('/contacto.html')
 def contacto():
     return render_template('contacto.html')
@@ -159,6 +155,59 @@ def ubicacion():
 
 #como enganchar imagenes de static
 #style="background-image: url('/static/Imagenes/tabla%20de%20comida.jpg');"
+
+
+#---------------CARRITO---------------------------------------------------------#
+
+@app.route('/delivery.html')
+def delivery():
+    conn = sqlite3.connect('database/inventario.db')
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM productos")
+    productos = cursor.fetchall()
+    conn.close()
+    return render_template('delivery.html', productos=productos, carrito=[], total=0)
+
+@app.route('/agregar_al_carrito/<int:codigo>', methods=['POST'])
+def agregar_al_carrito(codigo):
+    cantidad = int(request.form['cantidad'])
+
+    conn = sqlite3.connect('database/inventario.db')
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM productos WHERE codigo=?", (codigo,))
+    producto = cursor.fetchone()
+    conn.close()
+
+    producto_carrito = {
+        'codigo': producto[0],
+        'descripcion': producto[1],
+        'cantidad': cantidad,
+        'precio': producto[3]
+    }
+
+    carrito = request.cookies.get('carrito')
+    if carrito:
+        carrito = json.loads(carrito)
+        carrito.append(producto_carrito)
+    else:
+        carrito = [producto_carrito]
+
+    response = make_response(redirect('/delivery.html'))
+    response.set_cookie('carrito', json.dumps(carrito))
+
+    return response
+
+@app.route('/checkout', methods=['POST'])
+def checkout():
+    carrito = request.cookies.get('carrito')
+    if carrito:
+        carrito = json.loads(carrito)
+        total = sum(item['precio'] * item['cantidad'] for item in carrito)
+    else:
+        total = 0
+
+    return render_template('checkout.html', total=total)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
