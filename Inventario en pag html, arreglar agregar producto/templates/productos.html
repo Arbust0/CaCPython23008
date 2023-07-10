@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Puerto Resto</title>
+        
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <script src="https://kit.fontawesome.com/79d424b66a.js" crossorigin="anonymous"></script>
+    </head>
+
+<body>
+	<header>
+		<h2><a href="index.html">Puerto Resto - Nuestro Inventario</a></h2>
+
+	</header>
+
+    <section class="main"> <div class="background-image" style="background-image: url('/static/Imagenes/tabla%20de%20comida.jpg');"></div>
+        <div class="container">
+            <br>
+            <body>
+                <h1>Inventario</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                            <th>Stock</th>
+                            <th>Precio</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for producto in productos %}
+                        <tr>
+                            <td>{{ producto[0] }}</td>
+                            <td>{{ producto[1] }}</td>
+                            <td>{{ producto[2] }}</td>
+                            <td>{{ producto[3] }}</td>
+                            <td>
+                                <a href="/editar/{{ producto[0] }}">Editar</a>
+                                <form action="/eliminar/{{ producto[0] }}" method="post" style="display:inline">
+                                    <button type="submit">Eliminar</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <a href="/agregar_producto">Agregar producto</a>
+
+    </section>
+
+<section class="Redes">
+<div> <h2>¿Cómo contactarnos?</h2> </div>
+    <br>
+<ul>
+   <li><a target="_blank" href="https://facebook.com/profile.php?id=100091818918129"><i class="fa-brands fa-facebook"></i> Encontranos en Facebook</a></li>
+   <li><a href="#"><i class="fa-brands fa-twitter"></i>Encontranos en Twitter</a></li>
+     <li><a target="_blank" href="https://instagram.com/puertoresto"><i class="fa-brands fa-instagram"></i> Encontranos en Instagram</a></li>
+     <li><a target="_blank" href="https://tiktok.com/@puertoresto"><i class="fa-brands fa-tiktok"></i>Encontranos en TikTok</a></li>
+     <li><a target="_blank" href="https://wa.me/c/5491155875586"><i class="fa-brands fa-whatsapp"></i>Escribinos en Whatsapp al +5491155875586</a></li>
+   </ul>
+</section>
+
+<footer>
+   <ul>
+       <li><a target="_blank" href="https://facebook.com/profile.php?id=100091818918129"><i class="fa-brands fa-facebook"></i></a></li>
+       <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+         <li><a target="_blank" href="https://instagram.com/puertoresto"><i class="fa-brands fa-instagram"></i></a></li>
+         <li><a target="_blank" href="https://tiktok.com/@puertoresto"><i class="fa-brands fa-tiktok"></i></a></li>
+         <li><a target="_blank" href="https://wa.me/c/5491155875586"><i class="fa-brands fa-whatsapp"></i></a></li>
+   </ul>
+   <p>+5491155875586.</p>
+   <p>Direccion: Macacha Güemes 351, C1106BKG CABA</p>
+</footer>
+
+</body>
+
+</html>
