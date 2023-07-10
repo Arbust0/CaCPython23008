@@ -117,6 +117,7 @@ def eliminar_producto(codigo):
     conn.close()
     return redirect('/')
 
+#--------------RUTAS-------------------------------------------#
 @app.route('/templates/productos.html')
 def productos():
     return mostrar_productos()
