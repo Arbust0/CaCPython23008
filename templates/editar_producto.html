@@ -20,13 +20,14 @@
  <section class="main"> <div class="background-image" style="background-image: url('/static/Imagenes/tabla%20de%20comida.jpg');"></div>
     <div class="container">
         <h1>Editar Producto</h1>
-            <form action="/editar/{{ producto[0] }}" method="post">
+            <form class="carritoform" action="/editar/{{ producto[0] }}" method="post">
                 <label for="descripcion">Descripción:</label>
-                <input type="text" name="descripcion" id="descripcion" value="{{ producto[1] }}" required><br>
+                <input class="carritoinput" type="text" name="descripcion" id="descripcion" value="{{ producto[1] }}" required><br>
                 <label for="stock">Stock:</label>
-                <input type="number" name="stock" id="stock" value="{{ producto[2] }}" required><br>
+                <input class="carritoinput" type="number" name="stock" id="stock" value="{{ producto[2] }}" required><br>
                 <label for="precio">Precio:</label>
-                <input type="number" name="precio" id="precio" value="{{ producto[3] }}" required><br>
+                <input class="carritoinput" type="number" name="precio" id="precio" value="{{ producto[3] }}" required><br>
+                <br>
                 <button class="contactobutton" type="submit">Guardar</button>
             </form>
     <div class="container">        
