@@ -34,10 +34,7 @@ def create_database():
 
     cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='productos'")
     table_exists = cursor.fetchone()
-
-    if not table_exists:
-        create_table()
-        datos = [
+    datos = [
         ("11", "EMPANADA DE SALMÓN", "30","500"),
         ("12", "EMPANADA DE VERDURA", "20","500",),
         ("13", "BURRATA DE CAMPO", "10","1000", ),
@@ -62,9 +59,11 @@ def create_database():
         ("65", "SABORIZADA MANZANA", "80", "500"),
         ("66", "SABORIZADA NARANJA", "80", "500")
         ]
-    
-    cursor.executemany("""INSERT INTO productos (codigo, descripcion, cantidad, precio) VALUES (?, ?, ?, ?)""", datos)
-    conn.commit()
+
+    if not table_exists:
+        create_table()
+        cursor.executemany("""INSERT INTO productos (codigo, descripcion, cantidad, precio) VALUES (?, ?, ?, ?)""", datos)
+        conn.commit()
     conn.close()
 
 # Crear la base de datos y la tabla si no existen
