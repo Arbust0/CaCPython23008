@@ -23,12 +23,13 @@
         <div id="app">
             <form class="carritoform" @submit.prevent="obtenerProducto">
                 <label for="codigo">Código:</label>
-                <input type="text" v-model="codigo" required><br>
+                <input class="carritoinput" type="text" v-model="codigo" required><br>
                 <button class="carritobutton" type="submit">Modificar Producto</button> 
             </form>
 
             <div v-if="mostrarDatosProducto">
-                <h2>Datos del Producto</h2>
+                <br><br>
+                <h1> <u>Datos del Producto</u></h1>
                 <form class="carritoform" @submit.prevent="guardarCambios">
                     <label for="descripcionModificar">Descripción:</label>
                     <input class="carritoinput" type="text" id="descripcionModificar" v-model="descripcion" required><br>
