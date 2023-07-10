@@ -702,13 +702,10 @@ footer p a{
 }
 
 
-
-
 .carritoform{
     background-color: none;
-    border-radius: 3px;
-    color: #eee5f7;
-	text-align: center;
+    border-radius: 2em;
+    color: #b7cbf0;
     font-size: 2em;
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
@@ -720,24 +717,14 @@ footer p a{
 .carritoinput, textarea{
     border: 10;
     outline: none;
-    width: 150px;
-	background-color:rgb(247, 247, 247);
-    border-radius: 3px;
-    color:#333;
-	text-align: center;
-    font-size: 12px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight:normal;
-    padding: 10px;
-    margin: 0 auto;
+	font-size: 1em;
     width: 250px;
 }
 
 .carritofield{
-    border: outset 4px #550ee2;
-    padding: 3pc;
-    width: 4pc;
-	text-align: center;
+    border: outset 4px #bebdc0;
+    padding: 30px;
+    width: 40%;
     
 }
 
@@ -746,6 +733,14 @@ footer p a{
 }
 
 
+
+.carritocenter-content{
+    text-align: center;
+}
+.carritoleft-content{
+	text-align: justify;
+
+}
 
 
 

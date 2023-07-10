@@ -608,6 +608,46 @@ Ubicacion
 }
 
 
+.carritoform{
+    background-color: none;
+    border-radius: 2em;
+    color: #b7cbf0;
+    font-size: 2em;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    padding: 10px;
+    margin: 0 auto;
+    width: 250px;
+}
+
+.carritoinput, textarea{
+    border: 10;
+    outline: none;
+	font-size: 1em;
+    width: 250px;
+}
+
+.carritofield{
+    border: outset 4px #bebdc0;
+    padding: 30px;
+    width: 40%;
+    
+}
+
+.carritofield:focus{
+    border-color: #e3eaee;
+}
+
+
+
+.carritocenter-content{
+    text-align: center;
+}
+.carritoleft-content{
+	text-align: justify;
+
+}
+
 /*-------------
  	Footer
 -------------*/
