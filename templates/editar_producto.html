@@ -14,12 +14,13 @@
 </head>
 <body>
 <header>
-		<h2><a href="index.html">Puerto Resto - Editar carrito</a></h2>
+		<h2><a href="index.html">Puerto Resto </a></h2>
 
 	</header>
  <section class="main"> <div class="background-image" style="background-image: url('/static/Imagenes/tabla%20de%20comida.jpg');"></div>
     <div class="container">
-        <h1>Editar Producto</h1>
+        <h1>Editar Productos</h1>
+        
             <form class="carritoform" action="/editar/{{ producto[0] }}" method="post">
                 <label for="descripcion">Descripción:</label>
                 <input class="carritoinput" type="text" name="descripcion" id="descripcion" value="{{ producto[1] }}" required><br>
