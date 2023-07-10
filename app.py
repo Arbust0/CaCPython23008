@@ -67,7 +67,7 @@ def mostrar_productos():
     conn.close()
     return render_template('productos.html', productos=productos)
 
-@app.route('/agregar', methods=['GET', 'POST'])
+@app.route('/agregar_producto', methods=['GET', 'POST'])
 def agregar_producto():
     if request.method == 'POST':
         codigo = request.form['codigo']
