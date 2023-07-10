@@ -677,6 +677,32 @@ footer p a{
 
 
 
+/*---------Carrito
+------------------*/
+
+
+.carritobutton {
+    background-color: #2196F3;
+    border: 2px inset #efd7f5;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+  }
+
+  
+
+.carritobutton:hover {
+  background-color: #144f80; 
+  color: white;
+}
+
+
+
+
 
 
 
