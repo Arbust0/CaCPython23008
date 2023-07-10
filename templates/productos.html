@@ -30,6 +30,7 @@
                             <th>Descripción</th>
                             <th>Stock</th>
                             <th>Precio</th>
+                            <th>Imagen</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
@@ -41,6 +42,7 @@
                             <td>{{ producto[2] }}</td>
                             <td>{{ producto[3] }}</td>
                             <td>
+                                <img src="{{ producto[4] }}" alt="Imagen del producto" width="100">
                                 <a class="carritobutton" href="/editar/{{ producto[0] }}">Editar</a>
                                 <form action="/eliminar/{{ producto[0] }}" method="post" style="display:inline">
                                     <button class="carritobutton" type="submit">Eliminar</button>

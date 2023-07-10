@@ -5,13 +5,15 @@ import sqlite3
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database/inventario.db'
 db = SQLAlchemy(app)
+app.static_folder = 'static'
 
 class Producto(db.Model):
     codigo = db.Column(db.Integer, primary_key=True, autoincrement=True)
     descripcion = db.Column(db.String(100))
     cantidad = db.Column(db.String(50))
     precio = db.Column(db.String(50))
-
+    imagen = db.Column(db.String(100))
+    
 def create_database():
     conn = sqlite3.connect('database/inventario.db')
     cursor = conn.cursor()
@@ -25,10 +27,10 @@ def create_database():
                             descripcion TEXT,
                             stock INTEGER,
                             precio REAL
+                            imagen TEXT
                         )""")
         datos = [
-            ("11", "EMPANADA DE SALMÓN", 30, 500),
-            ("12", "EMPANADA DE VERDURA", 20, 500),
+            ("11", "EMPANADA DE SALMÓN", 30, 500,"/static/Imagenes/tabla%20de%20comida.jpg"),
             ("13", "BURRATA DE CAMPO", 10, 1000),
             ("21", "POLLO A LA CREMA", 15, 2000),
             ("22", "BONDIOLA CON PURÉ", 15, 2500),
@@ -51,7 +53,7 @@ def create_database():
             ("65", "SABORIZADA MANZANA", 80, 500),
             ("66", "SABORIZADA NARANJA", 80, 500)
         ]
-        cursor.executemany("INSERT INTO productos (codigo, descripcion, stock, precio) VALUES (?, ?, ?, ?)", datos)
+        cursor.executemany("INSERT INTO productos (codigo, descripcion, stock, precio, imagen) VALUES (?, ?, ?, ?, ?)", datos)
 
     conn.commit()
     conn.close()
