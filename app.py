@@ -96,7 +96,6 @@ def agregar_producto():
         conn.commit()
         conn.close()
         
-        return redirect('/productos.html?message=Producto%20agregado%20correctamente')
         return redirect('/')
 
 

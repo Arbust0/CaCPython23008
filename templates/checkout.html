@@ -31,7 +31,7 @@
             <br>
             <body>
             <h1>Gracias por tu compra</h1>
-                <form id="formulario" class="checkoutform" onsubmit="return validarFormulario()">
+            <form id="formulario" class="checkoutform" onsubmit="return validarFormulario()" action="/delivery.html">
                     <fieldset class=checkoutfield>
                         <legend><b>Datos personales:</b></legend>
                         <br>
@@ -65,8 +65,9 @@
                             <br> <br>
                     </fieldset>
                         <br><br>                   
-                        <p class="contactocenter-content" ><input type="submit" class="contactobutton" value="Enviar Datos"></p>
+                        <p class="contactocenter-content" href="/delivery.html"><input type="submit" class="contactobutton" value="Enviar Datos"></p>
                         <p class="contactocenter-content"><input type="reset" class="eliminarbutton" value="Borrar"></p>
+                        <a href="/delivery.html" class="cancelbutton"> <span class="close"> <i class="fa fa-close"></i></span> Cancelar</a>
                         <br> <br>
 
                 </form>
