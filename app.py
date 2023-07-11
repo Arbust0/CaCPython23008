@@ -138,6 +138,10 @@ def eliminar_producto(codigo):
 def productos():
     return mostrar_productos()
 
+@app.route('/productos.html')
+def productoss():
+    return productos()
+
 @app.route('/index.html')
 def index():
     return render_template('index.html')
