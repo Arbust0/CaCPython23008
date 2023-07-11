@@ -5,6 +5,7 @@ import json
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database/inventario.db'
+app.secret_key = 'maguu'  # Reemplaza esto con tu propia clave secreta
 db = SQLAlchemy(app)
 app.static_folder = 'static'
 
@@ -73,20 +74,24 @@ def mostrar_productos():
 
 @app.route('/agregar', methods=['GET', 'POST'])
 def agregar_producto():
-
     if request.method == 'GET':
         return render_template('agregar_producto.html')
- 
+
     if request.method == 'POST':
-        # codigo = request.form['codigo']
         descripcion = request.form['descripcion']
         stock = request.form['stock']
         precio = request.form['precio']
         imagen = request.files['imagen']
-        imagen.save('static/Imagenes/carrito/' + imagen.filename) 
+
+        if imagen.filename == '':
+            flash('Debes seleccionar una imagen.', 'error')
+            return redirect(request.url)
+
+        imagen.save('static/Imagenes/carrito/' + imagen.filename)
         conn = sqlite3.connect('database/inventario.db')
         cursor = conn.cursor()
-        cursor.execute("INSERT INTO productos (descripcion, stock, precio, imagen) VALUES (?, ?, ?,?)", (descripcion, stock, precio, '/static/Imagenes/carrito/' + imagen.filename))
+        cursor.execute("INSERT INTO productos (descripcion, stock, precio, imagen) VALUES (?, ?, ?, ?)",
+                       (descripcion, stock, precio, '/static/Imagenes/carrito/' + imagen.filename))
         conn.commit()
         conn.close()
         return redirect('/')

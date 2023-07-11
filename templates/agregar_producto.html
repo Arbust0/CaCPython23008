@@ -1,41 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Agregar Producto</title>
-        <link rel="stylesheet" href="estilos.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-        <script src="https://kit.fontawesome.com/79d424b66a.js" crossorigin="anonymous"></script>
-
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Agregar Producto</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://kit.fontawesome.com/79d424b66a.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<header>
-		<h2><a href="/templates/productos.html">Puerto Resto</a></h2>
+    <header>
+        <h2><a href="/templates/productos.html">Puerto Resto</a></h2>
         <h2><a href="/index.html">Nuestra página pública</a></h2>
-</header>
+    </header>
     
-<section class="main"> <div class="background-image" style="background-image: url('/static/Imagenes/tabla%20de%20comida.jpg');"></div>
-    <div class="container">
-    <h1>Agregar Producto</h1>
-    <form class="carritoform" action="/agregar" method="POST" enctype="multipart/form-data">
-        <br> 
-        <label for="descripcion">Descripción:</label>
-        <input class="carritoinput" type="text" id="descripcion" name="descripcion" required><br>
-        <label for="stock">Stock:</label>
-        <input class="carritoinput" type="text" id="stock" name="stock" required><br>
-        <label for="precio">Precio:</label>
-        <input class="carritoinput" type="text" id="precio" name="precio" required><br>
-        <label for="imagen">Imagen:</label>
-        <input type="file" id="imagen" name="imagen"><br>
-        <button class="contactobutton" type="submit">Agregar  <span class="check"> <i class="fa fa-check"></i></span></button>
-        <a href="/templates/productos.html" class="cancelbutton"><span class="close"> <i class="fa fa-close"></i></span> Cancelar</a>
-   
-    </form>
+    <section class="main">
+        <div class="background-image" style="background-image: url('/static/Imagenes/tabla%20de%20comida.jpg');"></div>
+        <div class="container">
+            <h1>Agregar Producto</h1>
+
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                            <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+
+            <form class="carritoform" action="/agregar" method="POST" enctype="multipart/form-data">
+                <br> 
+                <label for="descripcion">Descripción:</label>
+                <input class="carritoinput" type="text" id="descripcion" name="descripcion" required><br>
+                <label for="stock">Stock:</label>
+                <input class="carritoinput" type="text" id="stock" name="stock" required><br>
+                <label for="precio">Precio:</label>
+                <input class="carritoinput" type="text" id="precio" name="precio" required><br>
+                <label for="imagen">Imagen:</label>
+                <input type="file" id="imagen" name="imagen" accept="image/*" required><br>
+                <button class="contactobutton" type="submit">Agregar  <span class="check"> <i class="fa fa-check"></i></span></button>
+                <a href="/templates/productos.html" class="cancelbutton"><span class="close"> <i class="fa fa-close"></i></span> Cancelar</a>
+            </form>
+        </div>
+    </section>
 </body>
 </html>
