@@ -225,6 +225,22 @@ def checkout():
         carrito = json.loads(carrito)
         carrito = [item for item in carrito if item['cantidad'] > 0]
         total = sum(item['precio'] * item['cantidad'] for item in carrito)
+
+        conn = sqlite3.connect('database/inventario.db')
+        cursor = conn.cursor()
+
+        for item in carrito:
+            codigo = item['codigo']
+            cantidad = item['cantidad']
+            cursor.execute("UPDATE productos SET stock = stock - ? WHERE codigo = ?", (cantidad, codigo))
+
+        conn.commit()
+        conn.close()
+
+        response = make_response(render_template('checkout.html', productos=productos, carrito=carrito, total=total))
+        response.delete_cookie('carrito')  # Eliminar la cookie del carrito
+
+        return response
     else:
         carrito = []
         total = 0
