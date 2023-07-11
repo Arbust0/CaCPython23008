@@ -670,20 +670,6 @@ Ubicacion
 
 
 
-.carritotabla{
-    background-color: none;
-    border-radius: 2em;
-    color: #fcfcfc;
-    font-size: 1.1em;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: bold;
-    padding: 100px;
-	text-align:center;
-    margin: 0 auto;
-    width: 110%;
-}
-
-
 .carritocenter-content{
     text-align: center;
 }
@@ -699,6 +685,98 @@ Ubicacion
 	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
+
+
+
+.carritotabla{
+    background-color: none;
+    border-radius: 2em;
+    color: #fcfcfc;
+    font-size: 1.1em;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    padding: 100px;
+	text-align:center;
+    margin: 0 auto;
+    width: 110%;
+}
+/*--------------
+Checkout
+----------------*/
+
+.checkoutform{
+    background-color: none;
+    border-radius: 2em;
+    color: #fefeff;
+    font-size: 1.5em;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    padding: 10px;
+    margin: 0 auto;
+    width: 20em;
+}
+
+.checkoutinput, textarea{
+    border: 10;
+    outline: none;
+	font-size: 1.2em;
+    width: 20em;
+	border-radius: 8px;
+	font-weight: none;
+	font-family: 'Open Sans', sans-serif;
+	background-color: #d1d0fc;
+	color: #011220;
+	font-style: italic ;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.checkoutinput:hover {
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	font-weight: bold;
+}
+.checkoutfield{
+    border: inset 4px #efeafa;
+    padding: 30px;
+    width: 40%;
+    border-radius: 8px;
+}
+.checkoutcb {
+	transform: scale(1.5);
+	padding: 10px;
+}
+.checkoutfield:focus{
+    border-color: #e3eaee;
+}
+.form-control {
+	font-family: system-ui, sans-serif;
+	font-size: 2rem;
+	font-weight: bold;
+	line-height: 1.1;
+	display: grid;
+	grid-template-columns: 1em auto;
+	gap: 0.5em;
+  }
+
+
+
+/*------------
+Delivery
+-------------*/
+.deliveryinput, textarea{
+    border: 10;
+    outline: none;
+	font-size: 1.2em;
+    width: 3em;
+	border-radius: 8px;
+	font-weight: none;
+	font-family: 'Open Sans', sans-serif;
+	background-color: #d1d0fc;
+	color: #011220;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.deliveryinput:hover {
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	font-weight: bold;
+}
 /*-------------
  	Footer
 -------------*/
