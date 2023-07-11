@@ -595,6 +595,7 @@ Ubicacion
     border: 2px inset #efd7f5;
     color: white;
     padding: 10px 20px;
+	border-radius: 14px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -607,6 +608,7 @@ Ubicacion
 .carritobutton:hover {
   background-color: #144f80; 
   color: white;
+  border-radius: 50px;
 }
 
 .carritoform{
