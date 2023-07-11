@@ -904,6 +904,6 @@ footer p a{
   .producto img {
 	width: 100px;
   }
-  .imgcec:hover {
+  .producto img:hover {
 	transform: scale(1.7);
   }
