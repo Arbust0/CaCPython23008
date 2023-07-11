@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, request, make_response
+from flask import Flask, render_template, flash, redirect, request, make_response
 from flask_sqlalchemy import SQLAlchemy
 import sqlite3
 import json
