@@ -878,5 +878,28 @@ footer p a{
 
 
 
-
-
+.productos-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+  }
+  
+  .producto {
+	width: 23%; /* Ajusta el ancho para cada producto */
+	margin-bottom: 20px;
+	padding: 10px;
+	box-sizing: border-box;
+  }
+  
+  /* Estilos adicionales para cada producto */
+  .producto h2 {
+	font-size: 18px;
+  }
+  
+  .producto p {
+	font-size: 14px;
+  }
+  
+  .producto img {
+	width: 100px;
+  }
