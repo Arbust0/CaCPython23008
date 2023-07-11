@@ -72,6 +72,7 @@ def mostrar_productos():
     conn.close()
     return render_template('productos.html', productos=productos)
 
+    
 @app.route('/agregar', methods=['GET', 'POST'])
 def agregar_producto():
     if request.method == 'GET':
@@ -94,6 +95,8 @@ def agregar_producto():
                        (descripcion, stock, precio, '/static/Imagenes/carrito/' + imagen.filename))
         conn.commit()
         conn.close()
+        
+        flash('El producto se ha agregado correctamente.', 'success')
         return redirect('/')
 
 
@@ -135,6 +138,8 @@ def eliminar_producto(codigo):
     cursor.execute("DELETE FROM productos WHERE codigo=?", (codigo,))
     conn.commit()
     conn.close()
+    
+    flash('El producto se ha eliminado correctamente.', 'success')
     return redirect('/')
 
 #--------------RUTAS-------------------------------------------#
@@ -265,11 +270,15 @@ def checkout():
         return render_template('checkout.html', productos=productos, carrito=carrito, total=total)
     else:
         return redirect('/delivery.html')
+    
 
 @app.route('/reiniciar_carrito')
 def reiniciar_carrito():
     response = make_response(redirect('/delivery.html'))
     response.delete_cookie('carrito')
+    
+    flash('El carrito se ha reiniciado correctamente.', 'success')
+    
     return response
 
 if __name__ == '__main__':
