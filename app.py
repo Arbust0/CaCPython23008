@@ -229,8 +229,10 @@ def checkout():
         carrito = []
         total = 0
 
-    return render_template('checkout.html', productos=productos, carrito=carrito, total=total)
-
+    if total > 0:
+        return render_template('checkout.html', productos=productos, carrito=carrito, total=total)
+    else:
+        return redirect('/delivery.html')
 
 @app.route('/reiniciar_carrito')
 def reiniciar_carrito():
