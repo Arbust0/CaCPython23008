@@ -96,7 +96,7 @@ def agregar_producto():
         conn.commit()
         conn.close()
         
-        flash('El producto se ha agregado correctamente.', 'success')
+        return redirect('/productos.html?message=Producto%20agregado%20correctamente')
         return redirect('/')
 
 
