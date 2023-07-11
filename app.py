@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, request
+from flask import Flask, render_template, redirect, request, make_response
 from flask_sqlalchemy import SQLAlchemy
 import sqlite3
 
@@ -81,9 +81,11 @@ def agregar_producto():
         descripcion = request.form['descripcion']
         stock = request.form['stock']
         precio = request.form['precio']
+        imagen = request.files['imagen']
+        imagen.save('static/Imagenes/carrito/' + imagen.filename) 
         conn = sqlite3.connect('database/inventario.db')
         cursor = conn.cursor()
-        cursor.execute("INSERT INTO productos (descripcion, stock, precio) VALUES (?, ?, ?)", (descripcion, stock, precio))
+        cursor.execute("INSERT INTO productos (descripcion, stock, precio, imagen) VALUES (?, ?, ?,?)", (descripcion, stock, precio, '/static/Imagenes/carrito/' + imagen.filename))
         conn.commit()
         conn.close()
         return redirect('/')
@@ -100,9 +102,11 @@ def editar_producto(codigo):
         descripcion = request.form['descripcion']
         stock = request.form['stock']
         precio = request.form['precio']
+        imagen = request.files['imagen']
+        imagen.save('static/Imagenes/carrito/' + imagen.filename)  # Guardar la imagen en la carpeta adecuada
+        cursor.execute("UPDATE productos SET descripcion=?, stock=?, precio=? , imagen=? WHERE codigo=?",
+                    (descripcion, stock, precio, '/static/Imagenes/carrito/' + imagen.filename, codigo))
 
-        cursor.execute("UPDATE productos SET descripcion=?, stock=?, precio=? WHERE codigo=?",
-                    (descripcion, stock, precio, codigo))
         conn.commit()
         conn.close()
 
