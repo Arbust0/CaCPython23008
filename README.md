@@ -6,5 +6,3 @@ Integrantes:
 -Magali Leal
 -Cecilia Marquez
 -Augusto Luna
--Rocío Brito
--Marcelo
