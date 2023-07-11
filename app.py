@@ -103,18 +103,17 @@ def editar_producto(codigo):
         descripcion = request.form['descripcion']
         stock = request.form['stock']
         precio = request.form['precio']
+        imagen_path = producto[4]  # Retain the existing image path
 
-        # Verificar si se ha seleccionado una nueva imagen
+        # Check if a new image is selected
         if 'imagen' in request.files:
             imagen = request.files['imagen']
-            imagen.save('static/Imagenes/carrito/' + imagen.filename)
-            imagen_path = '/static/Imagenes/carrito/' + imagen.filename
-        else:
-            # Si no se selecciona una nueva imagen, mantener la imagen existente del producto
-            imagen_path = producto[4]
+            if imagen.filename != '':
+                imagen.save('static/Imagenes/carrito/' + imagen.filename)
+                imagen_path = '/static/Imagenes/carrito/' + imagen.filename
 
         cursor.execute("UPDATE productos SET descripcion=?, stock=?, precio=?, imagen=? WHERE codigo=?",
-                    (descripcion, stock, precio, imagen_path, codigo))
+                       (descripcion, stock, precio, imagen_path, codigo))
 
         conn.commit()
         conn.close()
