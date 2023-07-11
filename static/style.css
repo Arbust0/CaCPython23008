@@ -611,6 +611,23 @@ Ubicacion
   border-radius: 50px;
 }
 
+.eliminarbutton:hover {
+	background-color: #490303; 
+	color: white;
+	border-radius: 2em;
+  }
+  .eliminarbutton {
+	  background-color: #2196F3;
+	  border: 2px inset #efd7f5;
+	  border-radius: 8px;
+	  color: white;
+	  padding: 10px 20px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 14px;
+	  transition-duration: 0.4s;
+	}
 .carritoform{
     background-color: none;
     border-radius: 2em;
