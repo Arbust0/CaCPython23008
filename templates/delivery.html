@@ -41,7 +41,7 @@
                     <table class="table table-stripped"  width="800" text-align="center" cellspacing="3" cellpadding="3" style="font-size: 10pt">
                 {% for producto in productos %}
                     <li>
-                        <tr><h3>{{ producto[1] }}</h3>
+                        <tr><h2>{{ producto[1] }}</h2>
                         <p>Precio: {{ producto[3] }}</p>
                         <img src="{{ producto[4] }}" alt="Imagen del producto" width=100px>
                         <form action="/agregar_al_carrito/{{ producto[0] }}" method="POST">
