@@ -30,53 +30,48 @@
         <div class="container">
             <br>
             <body>
-                <h1>Gracias por tu compra</h1>
-                <form id="formulario" class="carritotabla" onsubmit="return validarFormulario()">
-                    <fieldset>
+            <h1>Gracias por tu compra</h1>
+                <form id="formulario" class="checkoutform" onsubmit="return validarFormulario()">
+                    <fieldset class=checkoutfield>
                         <legend><b>Datos personales:</b></legend>
                         <br>
                         <label for="nombre"><b>Nombre: </b></label> <br>
-                        <input size="20" type="text" name="nombre" id= "nombre" class="contactofield" placeholder="Ingrese su nombre aquí..." >
+                        <input class="checkoutinput" size="20" type="text" name="nombre" id= "nombre" placeholder="Ingrese su nombre aquí..." >
                         <br><br>
                         <label for="apellido"><b>Apellido: </b></label> <br>
-                        <input size="20" type="text" name="apellido" id="apellido" class="contactofield" placeholder="Ingrese su apellido aquí..." >
+                        <input size="20" class="checkoutinput" type="text" name="apellido" id="apellido" placeholder="Ingrese su apellido aquí..." >
                         <br><br>
             
                         <label for="direccion"><b>Dirección: </b></label> <br>
-                        <input type="direccion" class="contactofield" id="direccion" name="direccion">
+                        <input type="direccion" class="checkoutinput" id="direccion" name="direccion">
                         <br><br>
                         <label for="celular"><b>Celular: </b></label> <br>
-                        <input type="celular" class="contactofield" id="celular" name="calcular">
+                        <input type="celular" class="checkoutinput" id="celular" name="calcular">
                         <br><br>
                                 <legend><b>Método de pago:  </b> </legend> <br>
-                                <label for="01" class=".contactoleft-content" ><b>Efectivo</b></label>
-                                <input type= "checkbox"  name="mdp" class=".contactoleft-content" value="Efectivo" id="efectivo">
+                                <label for="01" class="contactoleft-content" ><b>Efectivo</b></label>
+                                <input type= "checkbox"  name="mdp" class="checkoutcb" transform= scale(1.5) value="Efectivo" id="efectivo">
                                 
-                                <label for="02" class=".contactoleft-content"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Transferencia</b></label>
-                                <input type="checkbox"  name="mdp" class= ".contactoleft-content" value="Transferencia" id="transferencia">
+                                <label for="02" class="contactoleft-content"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Transferencia</b></label>
+                                <input type="checkbox"  name="mdp" class= "checkoutcb" transform= scale(1.5) value="Transferencia" id="transferencia">
                                 <br> <br>
                                 
-                                <label for="04" class=".contactoleft-content"><b>Tarjeta de Débito</b></label>
-                                <input type="checkbox" name="mdp" class= ".contactoleft-content" value="TarjetaDebito" id="tarjetadebito">
+                                <label for="04" class="contactoleft-content"><b>Tarjeta de Débito</b></label>
+                                <input type="checkbox" name="mdp" class= "checkoutcb" transform= scale(1.5) value="TarjetaDebito" id="tarjetadebito">
                                     
-                                <label for="04"class=".contactoleft-content"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tarjeta de Crédito</b></label>
-                                <input type="checkbox"  name="mdp" class= ".contactoleft-content" value="TarjetaCredito" id="tarjetacredito">    
+                                <label for="04"class="contactoleft-content"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tarjeta de Crédito</b></label>
+                                <input type="checkbox"  name="mdp" class= "checkoutcb" transform= scale(1.5) value="TarjetaCredito" id="tarjetacredito">    
                                 <br>
                             <br> <br>
                     </fieldset>
-                    <br> <br>
-                            <p class="contactocenter-content"><input type="submit" class="contactobutton" value="Enviar Datos">
-                            </p>
-                            <p class="contactocenter-content"><input type="reset" class="contactobutton" value="Borrar">
-                            </p>
-                            <br> <br>
+                        <br><br>                   
+                        <p class="contactocenter-content" ><input type="submit" class="contactobutton" value="Enviar Datos"></p>
+                        <p class="contactocenter-content"><input type="reset" class="eliminarbutton" value="Borrar"></p>
+                        <br> <br>
 
-                        </form>
-                        <script src="valform.js"></script>
-                        </section>
-                        </div>
-
-
+                </form>
+            <script src="valform.js"></script>
+        </div>
     </section>
 
 <section class="Redes">
