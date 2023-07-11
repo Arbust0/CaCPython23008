@@ -712,8 +712,14 @@ Checkout
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     padding: 10px;
-    margin: 0 auto;
-    width: 20em;
+    margin: auto;
+	width: 100%;
+	max-width: 600px
+	margin: 0 auto;
+  	display: flex;
+  	flex-direction: column;
+  	justify-content: center;
+  	align-items: center
 }
 
 .checkoutinput, textarea{
