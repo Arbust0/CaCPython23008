@@ -43,9 +43,9 @@
                             <td>{{ producto[3] }}</td>
                             <td>
                                 <img src="{{ producto[4] }}" alt="Imagen del producto" width="100">
-                                <a class="carritobutton" href="/editar/{{ producto[0] }}">Editar</a>
+                                <a class="carritobutton" href="/editar/{{ producto[0] }}"><span class="loading"><i class="fa fa-refresh"></i></span> Editar</a>
                                 <form action="/eliminar/{{ producto[0] }}" method="post" style="display:inline">
-                                    <button class="carritobutton" type="submit">Eliminar</button>
+                                    <button class="eliminarbutton" type="submit"><span class="close"> <i class="fa fa-close"></i></span> Eliminar</button>
                                 </form>
                             </td>
                         </tr>
