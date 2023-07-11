@@ -893,7 +893,13 @@ footer p a{
 	margin-bottom: 20px;
 	padding: 10px;
 	box-sizing: border-box;
+	transition-duration: 0.2s;
+
   }
+  .producto:hover {
+	transform: scale(1.7);
+
+}
   
   /* Estilos adicionales para cada producto */
   .producto h2 {
@@ -909,6 +915,6 @@ footer p a{
 	transition-duration: 0.4s;
   }
   .producto img:hover {
-	transform: scale(1.7);
+	transform: scale(1.4);
 
   }
