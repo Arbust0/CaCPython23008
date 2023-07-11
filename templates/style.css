@@ -719,6 +719,7 @@ footer p a{
     outline: none;
 	font-size: 1em;
     width: 250px;
+	border-radius: 8px;
 }
 
 .carritofield{
