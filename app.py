@@ -5,7 +5,7 @@ import json
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database/inventario.db'
-app.secret_key = 'maguu'  # Reemplaza esto con tu propia clave secreta
+app.secret_key = 'maguu'
 db = SQLAlchemy(app)
 app.static_folder = 'static'
 
@@ -110,9 +110,8 @@ def editar_producto(codigo):
         descripcion = request.form['descripcion']
         stock = request.form['stock']
         precio = request.form['precio']
-        imagen_path = producto[4]  # Retain the existing image path
+        imagen_path = producto[4]  
 
-        # Check if a new image is selected
         if 'imagen' in request.files:
             imagen = request.files['imagen']
             if imagen.filename != '':
