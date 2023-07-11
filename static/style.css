@@ -894,6 +894,7 @@ footer p a{
 	padding: 10px;
 	box-sizing: border-box;
 	transition-duration: 0.2s;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 
   }
   .producto:hover {
