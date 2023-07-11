@@ -670,6 +670,20 @@ Ubicacion
 
 
 
+.carritotabla{
+    background-color: none;
+    border-radius: 2em;
+    color: #fcfcfc;
+    font-size: 1.1em;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    padding: 100px;
+	text-align:center;
+    margin: 0 auto;
+    width: 110%;
+}
+
+
 .carritocenter-content{
     text-align: center;
 }
