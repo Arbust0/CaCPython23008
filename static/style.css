@@ -548,6 +548,7 @@ Eventos Section
   background-color: #144f80; 
   color: white;
   border-radius: 50px;
+  transform: scale(1.2);
 }
 
 /*--------------
@@ -609,12 +610,14 @@ Ubicacion
   background-color: #144f80; 
   color: white;
   border-radius: 50px;
+  transform: scale(1.2);
 }
 
 .eliminarbutton:hover {
 	background-color: #490303; 
 	color: white;
 	border-radius: 2em;
+	transform: scale(1.1);
   }
   .eliminarbutton {
 	  background-color: #2196F3;
@@ -903,7 +906,9 @@ footer p a{
   
   .producto img {
 	width: 100px;
+	transition-duration: 0.4s;
   }
   .producto img:hover {
 	transform: scale(1.7);
+
   }
