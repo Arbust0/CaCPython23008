@@ -26,51 +26,45 @@
 		</nav>
 	</header>
 
-    <section class="main"> <div class="background-image" style="background-image: url(Imagenes/tabla\ de\ comida.jpg"> </div>
+    <section class="main"> <div class="background-image" style="background-image: url('/static/Imagenes/tabla%20de%20comida.jpg')"> </div>
         <div class="container">
             <br>
-            <h2>Menú</h2>
-            <ul>
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <title>Productos</title>
+            </head>
+            <body>
+                <h1>Productos</h1>
+                <ul>
                 {% for producto in productos %}
-                <li>
-                    <h3>{{ producto.descripcion }}</h3>
-                    <p>Stock: {{ producto.stock }}</p>
-                    <p>Precio: {{ producto.precio }}</p>
-                    <form action="/agregar_al_carrito/{{ producto.codigo }}" method="post">
-                        <input type="number" name="cantidad" value="1" min="1" max="{{ producto.stock }}">
-                        <button type="submit">Agregar al carrito</button>
-                    </form>
-                </li>
+                    <li>
+                        <h3>{{ producto[1] }}</h3>
+                        <p>Precio: {{ producto[3] }}</p>
+                        <img src="{{ producto[4] }}" alt="Imagen del producto">
+                        <form action="/agregar_al_carrito/{{ producto[0] }}" method="POST">
+                            <input type="number" name="cantidad" value="1" min="1">
+                            <input type="submit" value="Agregar al carrito">
+                        </form>
+                    </li>
                 {% endfor %}
-            </ul>
-        
-            <h2>Carrito de compras</h2>
-            <ul>
-                {% for item in carrito %}
-                <li>{{ item.descripcion }} (Cantidad: {{ item.cantidad }})</li>
-                {% endfor %}
-            </ul>
-        
-            <h2>Total: ${{ total }}</h2>
-        
-            <form action="/checkout" method="post">
-                <button type="submit">Realizar pedido</button>
-            </form>
-                        </div>
-                        </div>
-                    </div>
-
+                </ul>
+                <h2>Carrito de compras</h2>
+                <ul>
+                  {% for item in carrito %}
+                    {% if item['cantidad'] > 0 %}
+                      <li>{{ item['descripcion'] }} - Cantidad: {{ item['cantidad'] }} - Precio: {{ item['precio'] }} }}</li>
+                    {% endif %}
+                  {% endfor %}
+                </ul>
+                <h2>Total: {{ total }}</h2>
+                <form action="/checkout" method="POST">
+                    <input type="submit" value="Checkout">
                     
-                 </div>	
-     <!--  pop over
-        <script>
-            $(function (){
-                $('.example-popover').popover({
-                    container: 'body'
-                
-                })
-            });
-        </script> \-->
+                        <a href="/reiniciar_carrito">Reiniciar Carrito</a>
+                    </form>
+            </body>
+            </html>
 
     </section>
 

@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect, request, make_response
 from flask_sqlalchemy import SQLAlchemy
 import sqlite3
+import json
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database/inventario.db'
@@ -173,7 +174,17 @@ def delivery():
     cursor.execute("SELECT * FROM productos")
     productos = cursor.fetchall()
     conn.close()
-    return render_template('delivery.html', productos=productos, carrito=[], total=0)
+
+    carrito = request.cookies.get('carrito')
+    if carrito:
+        carrito = json.loads(carrito)
+        total = sum(item['precio'] * item['cantidad'] for item in carrito)
+    else:
+        carrito = []
+        total = 0
+
+    return render_template('delivery.html', productos=productos, carrito=carrito, total=total)
+
 
 @app.route('/agregar_al_carrito/<int:codigo>', methods=['POST'])
 def agregar_al_carrito(codigo):
@@ -185,36 +196,47 @@ def agregar_al_carrito(codigo):
     producto = cursor.fetchone()
     conn.close()
 
-    producto_carrito = {
-        'codigo': producto[0],
-        'descripcion': producto[1],
-        'cantidad': cantidad,
-        'precio': producto[3]
-    }
+    if producto:
+        producto_carrito = {
+            'codigo': producto[0],
+            'descripcion': producto[1],
+            'cantidad': cantidad,
+            'precio': float(producto[3])  # Convertir el precio a float
+        }
 
-    carrito = request.cookies.get('carrito')
-    if carrito:
-        carrito = json.loads(carrito)
-        carrito.append(producto_carrito)
+        carrito = request.cookies.get('carrito')
+        if carrito:
+            carrito = json.loads(carrito)
+            carrito.append(producto_carrito)
+        else:
+            carrito = [producto_carrito]
+
+        response = make_response(redirect('/delivery.html'))
+        response.set_cookie('carrito', json.dumps(carrito))
+
+        return response
     else:
-        carrito = [producto_carrito]
-
-    response = make_response(redirect('/delivery.html'))
-    response.set_cookie('carrito', json.dumps(carrito))
-
-    return response
+        return jsonify({'error': 'El producto no existe.'}), 404
 
 @app.route('/checkout', methods=['POST'])
 def checkout():
     carrito = request.cookies.get('carrito')
     if carrito:
         carrito = json.loads(carrito)
+        carrito = [item for item in carrito if item['cantidad'] > 0]
         total = sum(item['precio'] * item['cantidad'] for item in carrito)
     else:
+        carrito = []
         total = 0
 
-    return render_template('checkout.html', total=total)
+    return render_template('checkout.html', productos=productos, carrito=carrito, total=total)
 
+
+@app.route('/reiniciar_carrito')
+def reiniciar_carrito():
+    response = make_response(redirect('/delivery.html'))
+    response.delete_cookie('carrito')
+    return response
 
 if __name__ == '__main__':
     app.run(debug=True)
