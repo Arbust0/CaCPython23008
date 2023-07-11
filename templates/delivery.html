@@ -1,101 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Puerto Resto</title>
-        
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-        <script src="https://kit.fontawesome.com/79d424b66a.js" crossorigin="anonymous"></script>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Puerto Resto</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://kit.fontawesome.com/79d424b66a.js" crossorigin="anonymous"></script>
+</head>
 
 <body>
-	<header>
-		<h2><a href="/index.html">Puerto Resto</a></h2>
-		<nav>
-		<li><a href="/index.html">Inicio</a></li>
-		<li><a href="/carta.html">Carta</a></li>
-		<li><a href="reservas.html">Reservas</a></li>
+<header>
+    <h2><a href="/index.html">Puerto Resto</a></h2>
+    <nav>
+        <li><a href="/index.html">Inicio</a></li>
+        <li><a href="/carta.html">Carta</a></li>
+        <li><a href="reservas.html">Reservas</a></li>
         <li><a href="experiencias.html">Experiencias</a></li>
         <li><a href="delivery.html">Delivery</a></li>
-		<li><a href="contacto.html">Contacto</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
         <li><a href="ubicacion.html">Ubicación</a></li>
-		</nav>
-	</header>
+    </nav>
+</header>
 
-    <section class="main"> <div class="background-image" style="background-image: url('/static/Imagenes/tabla%20de%20comida.jpg')"> </div>
-        <div class="container">
-            <br>
-            <!DOCTYPE html>
-            <html>
-            <head>
-                <title>Productos</title>
-            </head>
-            <body>
-                <h1>Productos</h1>
-                <ul>
-                <form class="carritotabla">
-                    <table class="table table-stripped"  width="800" text-align="center" cellspacing="3" cellpadding="3" style="font-size: 10pt">
-                {% for producto in productos %}
-                    <li>
-                        <tr><h2>{{ producto[1] }}</h2>
-                        <p>Precio: {{ producto[3] }}</p>
-                        <img src="{{ producto[4] }}" alt="Imagen del producto" width=100px>
-                        <form action="/agregar_al_carrito/{{ producto[0] }}" method="POST">
-                            <input type="number" name="cantidad" value="1" min="1">
-                            <input type="submit" value="Agregar al carrito"></tr>
-                        </form>
+<section class="main"> 
+    <div class="background-image" style="background-image: url('/static/Imagenes/tabla%20de%20comida.jpg')"></div>
+    <div class="container">
+        <br>
+        <h1>Productos</h1>
+        <ul class="tablaC">
+        {% for producto in productos %}
+            <li>
+                <h2>{{ producto[1] }}</h2>
+                <p>Precio: {{ producto[3] }}</p>
+                <img src="{{ producto[4] }}" alt="Imagen del producto" width="100px">
+                <form action="/agregar_al_carrito/{{ producto[0] }}" method="POST">
+                    <input type="number" name="cantidad" value="1" min="1">
+                    <input type="submit" value="Agregar al carrito">
                 </form>
-                    </li>
-                {% endfor %}
-                </ul>
-                <h2>Carrito de compras</h2>
-                <ul>
-                  {% for item in carrito %}
-                    {% if item['cantidad'] > 0 %}
-                      <li>{{ item['descripcion'] }} - Cantidad: {{ item['cantidad'] }} - Precio: {{ item['precio'] }} }}</li>
-                    {% endif %}
-                  {% endfor %}
-                </ul>
-                <h2>Total: {{ total }}</h2>
-            </table>
-                <form action="/checkout" method="POST">
-                    <input type="submit" value="Checkout">
-
-                    <a href="/reiniciar_carrito" >Reiniciar Carrito</a>
-                    </form>
-            </body>
-            </html>
-
-    </section>
+            </li>
+        {% endfor %}
+        </ul>
+        
+        <h2>Carrito de compras</h2>
+        <ul>
+          {% for item in carrito %}
+            {% if item['cantidad'] > 0 %}
+              <li>{{ item['descripcion'] }} - Cantidad: {{ item['cantidad'] }} - Precio: {{ item['precio'] }}</li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+        
+        <h2>Total: {{ total }}</h2>
+        <form action="/checkout" method="POST">
+            <input type="submit" value="Checkout">
+            <a href="/reiniciar_carrito">Reiniciar Carrito</a>
+        </form>
+    </div>
+</section>
 
 <section class="Redes">
-<div> <h2>¿Cómo contactarnos?</h2> </div>
+    <div><h2>¿Cómo contactarnos?</h2></div>
     <br>
-<ul>
-   <li><a target="_blank" href="https://facebook.com/profile.php?id=100091818918129"><i class="fa-brands fa-facebook"></i> Encontranos en Facebook</a></li>
-   <li><a href="#"><i class="fa-brands fa-twitter"></i>Encontranos en Twitter</a></li>
-     <li><a target="_blank" href="https://instagram.com/puertoresto"><i class="fa-brands fa-instagram"></i> Encontranos en Instagram</a></li>
-     <li><a target="_blank" href="https://tiktok.com/@puertoresto"><i class="fa-brands fa-tiktok"></i>Encontranos en TikTok</a></li>
-     <li><a target="_blank" href="https://wa.me/c/5491155875586"><i class="fa-brands fa-whatsapp"></i>Escribinos en Whatsapp al +5491155875586</a></li>
-   </ul>
+    <ul>
+        <li><a target="_blank" href="https://facebook.com/profile.php?id=100091818918129"><i class="fa-brands fa-facebook"></i> Encontranos en Facebook</a></li>
+        <li><a href="#"><i class="fa-brands fa-twitter"></i>Encontranos en Twitter</a></li>
+        <li><a target="_blank" href="https://instagram.com/puertoresto"><i class="fa-brands fa-instagram"></i> Encontranos en Instagram</a></li>
+        <li><a target="_blank" href="https://tiktok.com/@puertoresto"><i class="fa-brands fa-tiktok"></i>Encontranos en TikTok</a></li>
+        <li><a target="_blank" href="https://wa.me/c/5491155875586"><i class="fa-brands fa-whatsapp"></i>Escribinos en Whatsapp al +5491155875586</a></li>
+    </ul>
 </section>
 
 <footer>
    <ul>
        <li><a target="_blank" href="https://facebook.com/profile.php?id=100091818918129"><i class="fa-brands fa-facebook"></i></a></li>
        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-         <li><a target="_blank" href="https://instagram.com/puertoresto"><i class="fa-brands fa-instagram"></i></a></li>
-         <li><a target="_blank" href="https://tiktok.com/@puertoresto"><i class="fa-brands fa-tiktok"></i></a></li>
-         <li><a target="_blank" href="https://wa.me/c/5491155875586"><i class="fa-brands fa-whatsapp"></i></a></li>
-   </ul>
-   <p>+5491155875586.</p>
-   <p>Direccion: Macacha Güemes 351, C1106BKG CABA</p>
-</footer>
-
-</body>
-
-</html>
+       <li><a target="_blank" href="https://instagram.com/puertoresto"><i class="fa-brands fa-instagram"></i></a></li>
