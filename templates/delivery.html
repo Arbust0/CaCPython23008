@@ -37,8 +37,9 @@
                 <h2>{{ producto[1] }}</h2>
                 <p>Precio: {{ producto[3] }}</p>
                 <img src="{{ producto[4] }}" alt="Imagen del producto" width="100px">
-                <form action="/agregar_al_carrito/{{ producto[0] }}" method="POST">
+                <form action="/agregar_al_carrito/{{ producto[0] }}" method="POST"> <br>
                     <input class="deliveryinput" type="number" name="cantidad" value="1" min="1">
+                    <br><br>
                     <input class="carritobutton" type="submit" value="Agregar al carrito">
                 </form>
             </li>
