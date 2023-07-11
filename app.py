@@ -98,15 +98,23 @@ def editar_producto(codigo):
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM productos WHERE codigo=?", (codigo,))
     producto = cursor.fetchone()
-    
+
     if request.method == 'POST':
         descripcion = request.form['descripcion']
         stock = request.form['stock']
         precio = request.form['precio']
-        imagen = request.files['imagen']
-        imagen.save('static/Imagenes/carrito/' + imagen.filename)  # Guardar la imagen en la carpeta adecuada
-        cursor.execute("UPDATE productos SET descripcion=?, stock=?, precio=? , imagen=? WHERE codigo=?",
-                    (descripcion, stock, precio, '/static/Imagenes/carrito/' + imagen.filename, codigo))
+
+        # Verificar si se ha seleccionado una nueva imagen
+        if 'imagen' in request.files:
+            imagen = request.files['imagen']
+            imagen.save('static/Imagenes/carrito/' + imagen.filename)
+            imagen_path = '/static/Imagenes/carrito/' + imagen.filename
+        else:
+            # Si no se selecciona una nueva imagen, mantener la imagen existente del producto
+            imagen_path = producto[4]
+
+        cursor.execute("UPDATE productos SET descripcion=?, stock=?, precio=?, imagen=? WHERE codigo=?",
+                    (descripcion, stock, precio, imagen_path, codigo))
 
         conn.commit()
         conn.close()
