@@ -19,7 +19,7 @@
     <div class="background-image" style="background-image: url('/static/Imagenes/tabla%20de%20comida.jpg');"></div>
     <div class="container">
         <h1>Editar Producto</h1>
-        <form class="carritoform" action="/editar/{{ producto[0] }}" method="post">
+        <form class="carritoform" action="/editar/{{ producto[0] }}" method="post"enctype="multipart/form-data">
             <label for="descripcion">Descripción:</label>
             <input class="carritoinput" type="text" name="descripcion" id="descripcion" value="{{ producto[1] }}" required><br>
             <label for="stock">Stock:</label>
@@ -27,6 +27,8 @@
             <label for="precio">Precio:</label>
             <input class="carritoinput" type="number" name="precio" id="precio" value="{{ producto[3] }}" required><br>
             <br>
+            <label for="imagen">Imagen:</label>
+            <input type="file" id="imagen" name="imagen"><br>
             <button class="contactobutton" type="submit">Guardar</button>
             <a href="/templates/productos.html" class="cancelbutton">Cancelar</a>
         </form>

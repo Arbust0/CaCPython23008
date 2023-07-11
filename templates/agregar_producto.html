@@ -22,15 +22,16 @@
 <section class="main"> <div class="background-image" style="background-image: url('/static/Imagenes/tabla%20de%20comida.jpg');"></div>
     <div class="container">
     <h1>Agregar Producto</h1>
-    <form class="carritoform" action="/agregar" method="POST">
-        <!-- <label for="codigo">Código:</label>
-        <input type="text" id="codigo" name="codigo" required><br> -->
+    <form class="carritoform" action="/agregar" method="POST" enctype="multipart/form-data">
+        <br> -->
         <label for="descripcion">Descripción:</label>
         <input class="carritoinput" type="text" id="descripcion" name="descripcion" required><br>
         <label for="stock">Stock:</label>
         <input class="carritoinput" type="text" id="stock" name="stock" required><br>
         <label for="precio">Precio:</label>
         <input class="carritoinput" type="text" id="precio" name="precio" required><br>
+        <label for="imagen">Imagen:</label>
+        <input type="file" id="imagen" name="imagen"><br>
         <button class="contactobutton" type="submit">Agregar  <span class="check"> <i class="fa fa-check"></i></span></button>
     </form>
 </body>
